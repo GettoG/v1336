@@ -41,3 +41,17 @@ C:\Users\getto_g\Desktop\wh\v1336\v1336\bin\Debug\GalaSoft.MvvmLight.Extras.WPF4
 C:\Users\getto_g\Desktop\wh\v1336\v1336\bin\Debug\GalaSoft.MvvmLight.WPF45.pdb
 C:\Users\getto_g\Desktop\wh\v1336\v1336\bin\Debug\GalaSoft.MvvmLight.WPF45.xml
 C:\Users\getto_g\Desktop\wh\v1336\v1336\obj\Debug\v1336.csproj.v1336.exe.config
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.csprojResolveAssemblyReference.cache
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.csproj.v1336.exe.config
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\View\Customers.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\View\Departments.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\View\Employees.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\View\Main.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\View\Managers.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\View\Nomenclatures.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\App.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336_MarkupCompile.cache
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336_MarkupCompile.lref
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.exe
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.pdb

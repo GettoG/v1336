@@ -27,6 +27,6 @@ namespace v1336.View
         {
             Customers win = new Customers { Owner = this };
             win.Show();
-        }
+        }        
     }
 }
