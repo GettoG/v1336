@@ -1,31 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
+using System.Linq;
+using System.Windows.Documents;
 using v1336.Model;
-
 namespace v1336.Rep
 {
-    public class EmployeeRep
+    public class EmployeeRep : IRep<Employee>
     {
-        private ObservableCollection<Employee> _employees;
+        private DBContext db;
 
-        public ObservableCollection<Employee> AllEmployees
+        public EmployeeRep()
         {
-            get
-            {
-                if (_employees == null)
-                    _employees = GenerateEmployeeRep();
-                return _employees;
-            }
+            db = new DBContext();
         }
 
-        private ObservableCollection<Employee> GenerateEmployeeRep()
+        public ObservableCollection<Employee> GetAll()
         {
-            ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
-            return employees;
+            db.Employees.Load();
+            return db.Employees.Local;
+        }
+
+        public Employee GetById(int id)
+        {
+            return db.Employees.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Add(Employee obj)
+        {
+            db.Employees.Add(obj);
+            db.SaveChanges();
+        }
+
+        public void Update(Employee obj)
+        {
+            db.Employees.Attach(obj);
+            var entry = db.Entry(obj);
+            entry.Property(e => e.FirstName).IsModified = true;
+            db.SaveChanges();
+        }
+
+        public void Delete(Employee obj)
+        {
+            db.Employees.Remove(obj);
+            db.SaveChanges();
         }
     }
 }

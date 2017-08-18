@@ -13,6 +13,9 @@
         public DbSet<Order> Orders { get; set; }
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Nomenclature> Nomenclatures { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
     }
 }

@@ -1,31 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
+using System.Linq;
+using System.Windows.Documents;
 using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class DepartmentRep
+    public class DepartmentRep : IRep<Department>
     {
-        private ObservableCollection<Department> _departments;
+        private DBContext db;
 
-        public ObservableCollection<Department> AllDepartments
+        public DepartmentRep()
         {
-            get
-            {
-                if (_departments == null)
-                    _departments = GenerateDepartmentsRep();
-                return _departments;
-            }
+            db = new DBContext();
         }
 
-        private ObservableCollection<Department> GenerateDepartmentsRep()
+        public ObservableCollection<Department> GetAll()
         {
-            ObservableCollection<Department> departments = new ObservableCollection<Department>();
-            return departments;
+            db.Customers.Load();
+            return db.Departments.Local;
+        }
+
+        public Department GetById(int id)
+        {
+            return db.Departments.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Add(Department obj)
+        {
+            db.Customers.Add(obj);
+            db.SaveChanges();
+        }
+
+        public void Update(Department obj)
+        {
+            db.Departments.Attach(obj);
+            var entry = db.Entry(obj);
+            entry.Property(e => e.Name).IsModified = true;
+            db.SaveChanges();
+            GetAll();
+        }
+
+        public void Delete(Department obj)
+        {
+            db.Departments.Remove(obj);
+            db.SaveChanges();
         }
     }
 }
