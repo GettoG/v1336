@@ -27,6 +27,36 @@ namespace v1336.View
         {
             Customers win = new Customers { Owner = this };
             win.Show();
-        }        
+        }
+
+        private void MenuItem_Click_Customers(object sender, RoutedEventArgs e)
+        {
+            Customers win = new Customers { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Managers(object sender, RoutedEventArgs e)
+        {
+            Managers win = new Managers { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Departments(object sender, RoutedEventArgs e)
+        {
+            Departments win = new Departments { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Nomenclatures(object sender, RoutedEventArgs e)
+        {
+            Nomenclatures win = new Nomenclatures { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Employees(object sender, RoutedEventArgs e)
+        {
+            Employees win = new Employees { Owner = this };
+            win.Show();
+        }
     }
 }

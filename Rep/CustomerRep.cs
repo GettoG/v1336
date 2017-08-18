@@ -38,7 +38,8 @@ namespace v1336.Rep
             db.Customers.Attach(obj);
             var entry = db.Entry(obj);
             entry.Property(e => e.Name).IsModified = true;
-            db.SaveChanges(); 
+            db.SaveChanges();
+            GetAll();
         }
 
         public void Delete(Customer obj)

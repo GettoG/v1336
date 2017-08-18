@@ -8,20 +8,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="579.8" Width="793.5">
     <Grid>
-        <Label x:Name="label" Content="well done (:" HorizontalAlignment="Left" Margin="86,136,0,0" VerticalAlignment="Top" FontFamily="West Side"/>
-        <Grid HorizontalAlignment="Left" Height="156" Margin="401,136,0,0" VerticalAlignment="Top" Width="209" Background="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190*"/>
+            <ColumnDefinition Width="203*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="156" Margin="21,136,0,0" VerticalAlignment="Top" Width="209" Background="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}" Grid.Column="1">
             <Button x:Name="BtnManagers" Content="Добавить менеджера" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="178" Height="24" Background="#FFF4FEFF" Click="BtnManagersClick"
                     />
             <Button x:Name="BtnCustomers" Content="Добавить заказчика" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Width="178" Height="24" Background="#FFF4FEFF" Click="BtnCustomersClick"
                     />
         </Grid>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="786" RenderTransformOrigin="0.025,0.585">
-            <MenuItem Header="Справочники" Width="90">
-                <MenuItem Header="Заказчики" HorizontalAlignment="Left" Width="161" Margin="0,0,-21,0"/>
-                <MenuItem Header="Менеджеры" HorizontalAlignment="Left" Width="170" Margin="0,0,-30,0"/>
-                <MenuItem Header="Подразделения" HorizontalAlignment="Left" Width="179" Margin="0,0,-39,0"/>
-                <MenuItem Header="Изделия" HorizontalAlignment="Left" Width="140"/>
-                <MenuItem Header="Работники" HorizontalAlignment="Left" Height="22" Width="163" Click="MenuItem_Click" Margin="0,0,-23,0"/>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="786" RenderTransformOrigin="0.025,0.585" Grid.ColumnSpan="2">
+            <MenuItem Header="Справочники" Width="94" Height="23">
+                <MenuItem Header="Заказчики" HorizontalAlignment="Left" Width="161" Margin="0,0,-21,0" Click="MenuItem_Click_Customers"/>
+                <MenuItem Header="Менеджеры" HorizontalAlignment="Left" Width="170" Margin="0,0,-30,0" Click="MenuItem_Click_Managers"/>
+                <MenuItem Header="Подразделения" HorizontalAlignment="Left" Width="179" Margin="0,0,-39,0" Click="MenuItem_Click_Departments"/>
+                <MenuItem Header="Изделия" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click_Nomenclatures"/>
+                <MenuItem Header="Работники" HorizontalAlignment="Left" Height="22" Width="163" Margin="0,0,-23,0" Click="MenuItem_Click_Employees"/>
             </MenuItem>
         </Menu>
 
