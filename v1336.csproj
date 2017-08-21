@@ -123,6 +123,14 @@
     <Compile Include="Migrations\201708100608077_first.Designer.cs">
       <DependentUpon>201708100608077_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708210434200_managers.cs" />
+    <Compile Include="Migrations\201708210434200_managers.Designer.cs">
+      <DependentUpon>201708210434200_managers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708211101592_deleterequired.cs" />
+    <Compile Include="Migrations\201708211101592_deleterequired.Designer.cs">
+      <DependentUpon>201708211101592_deleterequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\CommentTheme.cs" />
@@ -220,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708100608077_first.resx">
       <DependentUpon>201708100608077_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708210434200_managers.resx">
+      <DependentUpon>201708210434200_managers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708211101592_deleterequired.resx">
+      <DependentUpon>201708211101592_deleterequired.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

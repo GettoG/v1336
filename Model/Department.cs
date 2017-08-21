@@ -15,5 +15,20 @@ namespace v1336.Model
         public string Name { get; set; }
         public List<Nomenclature> Nomenclatures { get; set; }
         public List<CommentTheme> CommentThemes { get; set; }
+
+        public Department(string name)
+        {
+            Name = name;
+        }
+
+        public Department()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

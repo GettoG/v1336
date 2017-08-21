@@ -18,7 +18,7 @@ namespace v1336.Rep
 
         public ObservableCollection<Department> GetAll()
         {
-            db.Customers.Load();
+            db.Departments.Load();
             return db.Departments.Local;
         }
 
@@ -29,7 +29,7 @@ namespace v1336.Rep
 
         public void Add(Department obj)
         {
-            db.Customers.Add(obj);
+            db.Departments.Add(obj);
             db.SaveChanges();
         }
 

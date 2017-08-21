@@ -9,10 +9,10 @@ namespace v1336.ViewModel
 {
     class DepartmentsVM : ViewModelBase
     {
-        private CustomerRep rep;
+        private DepartmentRep rep;
         public DepartmentsVM()
         {
-            rep = new CustomerRep();
+            rep = new DepartmentRep();
         }
 
         Department _currentDepartment;
@@ -51,14 +51,14 @@ namespace v1336.ViewModel
             RaisePropertyChanged("Departments");
         }
 
-        RelayCommand _addDepartmentCommand;
+        private RelayCommand _addDepartmentCommand;
         public RelayCommand AddDepartment
         {
             get
             {
-                if (_addDepartmentrCommand == null)
-                    _addDepartmentrCommand = new RelayCommand(ExecuteAddDepartmentCommand, CanExecuteAddDepartmentCommand);
-                return _addDepartmentrCommand;
+                if (_addDepartmentCommand == null)
+                    _addDepartmentCommand = new RelayCommand(ExecuteAddDepartmentCommand, CanExecuteAddDepartmentCommand);
+                return _addDepartmentCommand;
             }
         }
         public void ExecuteAddDepartmentCommand()
@@ -103,5 +103,9 @@ namespace v1336.ViewModel
                 RaisePropertyChanged("selectedDepartment");
             }
         }
+
+        public RelayCommand AddDepartmentCommand { get => AddDepartmentCommand2; set => AddDepartmentCommand2 = value; }
+        public RelayCommand AddDepartmentCommand1 { get => AddDepartmentCommand2; set => AddDepartmentCommand2 = value; }
+        public RelayCommand AddDepartmentCommand2 { get => _addDepartmentCommand; set => _addDepartmentCommand = value; }
     }
 }

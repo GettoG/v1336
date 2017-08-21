@@ -104,4 +104,6 @@ C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.Migrations.first.resources
 C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.Properties.Resources.resources
 C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.csproj.GenerateResource.Cache
 C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.csproj.CoreCompileInputs.cache
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.Migrations.managers.resources
 C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.csprojResolveAssemblyReference.cache
+C:\Users\it\Documents\GitHub\v1336\obj\Debug\v1336.Migrations.deleterequired.resources
