@@ -7,7 +7,7 @@ using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class CustomerRep : IRep<Customer>
+    public class CustomerRep : IRep
     {
         private DBContext db;
 
@@ -20,6 +20,32 @@ namespace v1336.Rep
         {
             db.Customers.Load();
             return db.Customers.Local;
+        }
+
+        IDbObject IRep.GetById(int id)
+        {
+            return GetById(id);
+        }
+
+        public void Add(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        ObservableCollection<IDbObject> IRep.GetAll()
+        {
+            db.Customers.Load();
+            return new ObservableCollection<IDbObject>(db.Customers.Local);
         }
 
         public Customer GetById(int id)

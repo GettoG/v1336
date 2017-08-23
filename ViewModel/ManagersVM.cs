@@ -16,6 +16,8 @@ namespace v1336.ViewModel
             rep = new ManagerRep();
         }
 
+
+
         Manager _currentManager;
         public Manager CurrentManager
         {
@@ -46,7 +48,7 @@ namespace v1336.ViewModel
             }
         }
 
-        private void UpdateManager(object sender, NotifyCollectionChangedEventArgs e)
+        public void UpdateManager(object sender, NotifyCollectionChangedEventArgs e)
         {
             RaisePropertyChanged("Managers");
         }

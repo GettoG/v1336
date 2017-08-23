@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace v1336.Model
 {
-    public class Department
+    public class Department : IDbObject
     {
         public int Id { get; set; }
 

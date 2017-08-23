@@ -7,7 +7,7 @@ using v1336.Model;
 
 namespace v1336.Rep
 {
-    class NomenclatureRep : IRep<Nomenclature>
+    class NomenclatureRep : IRep
     {
         private DBContext db;
 
@@ -20,6 +20,31 @@ namespace v1336.Rep
         {
             db.Nomenclatures.Load();
             return db.Nomenclatures.Local;
+        }
+
+        IDbObject IRep.GetById(int id)
+        {
+            return GetById(id);
+        }
+
+        public void Add(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        ObservableCollection<IDbObject> IRep.GetAll()
+        {
+            throw new System.NotImplementedException();
         }
 
         public Nomenclature GetById(int id)

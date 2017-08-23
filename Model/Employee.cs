@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace v1336.Model
 {
-    public class Employee
+    public class Employee : IDbObject
     {
         [Key]
         [ForeignKey("User")]

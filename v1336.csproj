@@ -138,12 +138,15 @@
     <Compile Include="Model\DBContext.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\IDbObject.cs" />
     <Compile Include="Rep\CustomerRep.cs" />
     <Compile Include="Rep\DepartmentRep.cs" />
     <Compile Include="Rep\EmployeeRep.cs" />
     <Compile Include="Rep\IRep.cs" />
     <Compile Include="Rep\ManagerRep.cs" />
     <Compile Include="Rep\NomenclatureRep.cs" />
+    <Compile Include="ViewModel\CRUD\ItemsData.cs" />
+    <Compile Include="ViewModel\CRUD\ItemsListVM.cs" />
     <Compile Include="ViewModel\CustomersVM.cs" />
     <Compile Include="ViewModel\DepartmentsVM.cs" />
     <Compile Include="ViewModel\EmployeesVM.cs" />
@@ -161,26 +164,50 @@
     <Compile Include="ViewModel\NomenclaturesVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\VMLocator.cs" />
+    <Compile Include="View\Authorization.xaml.cs">
+      <DependentUpon>Authorization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CRUD\ItemsList.xaml.cs">
+      <DependentUpon>ItemsList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Departments.xaml.cs">
       <DependentUpon>Departments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditManager.xaml.cs">
+      <DependentUpon>EditManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Employees.xaml.cs">
       <DependentUpon>Employees.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Managers.xaml.cs">
-      <DependentUpon>Managers.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Nomenclatures.xaml.cs">
       <DependentUpon>Nomenclatures.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Priorities.xaml.cs">
+      <DependentUpon>Priorities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Problems.xaml.cs">
+      <DependentUpon>Problems.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CRUD\ItemsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Customers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Departments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,11 +227,15 @@
       <DependentUpon>Main.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Managers.xaml">
+    <Page Include="View\Nomenclatures.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Nomenclatures.xaml">
+    <Page Include="View\Priorities.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Problems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

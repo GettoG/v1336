@@ -57,7 +57,8 @@
                 <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,10"><Run Text="Подразделение"/></TextBlock>
 
                 <ComboBox Grid.Row="4" Grid.Column="1" Margin="0,10" ItemsSource="{Binding Path=Departments}"
-                          SelectedItem="{Binding SelectedEmployee}" ></ComboBox>
+                          SelectedItem="{Binding SelectedEmployee}"
+                          Text="{Binding CurrentEmployee.Department, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
 
                 <Button Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" IsEnabled="{Binding CanExececute}" 
                         Command="{Binding Path=AddEmployee}"  

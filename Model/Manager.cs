@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace v1336.Model
 {
-    public class Manager
+    public class Manager : IDbObject
     {
         public int Id { get; set; }
         [Required]

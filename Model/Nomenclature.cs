@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace v1336.Model
 {
-    public class Nomenclature
+    public class Nomenclature : IDbObject
     {
         public int Id { get; set; }
         [Required]

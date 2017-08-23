@@ -32,7 +32,7 @@ namespace v1336.ViewModel
             }
             set
             {
-           
+
                 _currentEmployee = value;
                 RaisePropertyChanged("CurrentEmployee");
             }

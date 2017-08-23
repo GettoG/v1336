@@ -9,12 +9,12 @@ using v1336.Model;
 
 namespace v1336.Rep
 {
-    interface IRep<T>
+    public interface IRep
     {
-        ObservableCollection<T> GetAll();
-        T GetById(int id);
-        void Add(T obj);
-        void Update(T obj);
-        void Delete(T obj);
+        ObservableCollection<IDbObject> GetAll();
+        IDbObject GetById(int id);
+        void Add(IDbObject obj);
+        void Update(IDbObject obj);
+        void Delete(IDbObject obj);
     }
 }

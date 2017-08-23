@@ -7,7 +7,7 @@ using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class ManagerRep : IRep<Manager>
+    public class ManagerRep : IRep
     {
         private DBContext db;
 
@@ -20,6 +20,33 @@ namespace v1336.Rep
         {
             db.Managers.Load();
             return db.Managers.Local;
+        }
+
+        IDbObject IRep.GetById(int id)
+        {
+            return GetById(id);
+        }
+
+        public void Add(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete(IDbObject obj)
+        {
+            db.Managers.Remove(obj as Manager);
+            db.SaveChanges();
+        }
+
+        ObservableCollection<IDbObject> IRep.GetAll()
+        {
+            db.Managers.Load();
+            return new ObservableCollection<IDbObject>(db.Managers.Local);
         }
 
         public Manager GetById(int id)

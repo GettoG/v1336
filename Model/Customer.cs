@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace v1336.Model
 {
-    public class Customer
+    public class Customer : IDbObject
     {
         public int Id { get; set; }
         [Required]

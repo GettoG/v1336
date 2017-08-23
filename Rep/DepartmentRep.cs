@@ -7,7 +7,7 @@ using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class DepartmentRep : IRep<Department>
+    public class DepartmentRep : IRep
     {
         private DBContext db;
 
@@ -15,6 +15,35 @@ namespace v1336.Rep
         {
             db = new DBContext();
         }
+
+        
+
+        IDbObject IRep.GetById(int id)
+        {
+            return GetById(id);
+        }
+
+        public void Add(IDbObject obj)
+        {
+            
+        }
+
+        public void Update(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete(IDbObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        ObservableCollection<IDbObject> IRep.GetAll()
+        {
+            db.Departments.Load();
+            return new ObservableCollection<IDbObject>(db.Departments.Local);
+        }
+
 
         public ObservableCollection<Department> GetAll()
         {

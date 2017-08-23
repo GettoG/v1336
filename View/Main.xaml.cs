@@ -1,5 +1,9 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using v1336.Model;
+using v1336.Rep;
+using v1336.View.CRUD;
+using v1336.ViewModel.CRUD;
 
 namespace v1336.View
 {
@@ -17,28 +21,22 @@ namespace v1336.View
             db.SaveChanges();
         }
 
-        private void BtnManagersClick(object sender, RoutedEventArgs e)
-        {
-            Managers win = new Managers {Owner = this};
-            win.Show();
-        }
-
-        private void BtnCustomersClick(object sender, RoutedEventArgs e)
-        {
-            Customers win = new Customers { Owner = this };
-            win.Show();
-        }
-
         private void MenuItem_Click_Customers(object sender, RoutedEventArgs e)
         {
-            Customers win = new Customers { Owner = this };
+            var itemData = new ItemsData("Справочник заказчики", new CustomerRep(), typeof(EditManager));
+            ShowCatalog(itemData);
+        }
+
+        private void ShowCatalog(ItemsData data)
+        {
+            var win = new ItemsList(data);
             win.Show();
         }
 
         private void MenuItem_Click_Managers(object sender, RoutedEventArgs e)
         {
-            Managers win = new Managers { Owner = this };
-            win.Show();
+            var itemData = new ItemsData("Справочник менеджеры", new ManagerRep(), typeof(EditManager));
+            ShowCatalog(itemData);
         }
 
         private void MenuItem_Click_Departments(object sender, RoutedEventArgs e)
@@ -56,6 +54,24 @@ namespace v1336.View
         private void MenuItem_Click_Employees(object sender, RoutedEventArgs e)
         {
             Employees win = new Employees { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Priorities(object sender, RoutedEventArgs e)
+        {
+            Priorities win = new Priorities { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Problems(object sender, RoutedEventArgs e)
+        {
+            Problems win = new Problems { Owner = this };
+            win.Show();
+        }
+
+        private void MenuItem_Click_Authorization(object sender, RoutedEventArgs e)
+        {
+            Authorization win = new Authorization { Owner = this };
             win.Show();
         }
     }
