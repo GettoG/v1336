@@ -27,7 +27,7 @@ namespace v1336.ViewModel.CRUD
 
         public Window GetWindow(ItemsListVM parentWindowMV, int id)
         {
-            var constructor = WindowType.GetConstructor(new Type[]{ typeof(ItemsListVM), typeof(int) });
+            var constructor = WindowType.GetConstructor( new Type[]{ typeof(ItemsListVM), typeof(int) });
             Window res = constructor.Invoke(new object[]{ parentWindowMV, id }) as Window;
             return res;
         }

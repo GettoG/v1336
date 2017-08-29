@@ -17,6 +17,23 @@ namespace v1336.Model
         public string FatherName { get; set; }
         public string Phone { get; set; }
 
+        public string FullName
+        {
+            get
+            {
+                string res = LastName;
+                if (!string.IsNullOrEmpty(FirstName))
+                {
+                    res += " " + FirstName[0] + ".";
+                }
+                if (!string.IsNullOrEmpty(FirstName))
+                {
+                    res += " " + FatherName[0] + ".";
+                }
+                return res;
+            }
+        }
+
         public override string ToString()
         {
             return $"{LastName} {FirstName} {FatherName} ({Phone})";

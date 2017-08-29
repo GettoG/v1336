@@ -19,11 +19,9 @@ namespace v1336.Model
         public string FirstName { get; set; }
         public string FatherName { get; set; }
         public string Phone { get; set; }
-
-        public CommentTheme CommentTheme { get; set; }
+        
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
-        public OrderRow OrderRow  { get; set; }
         public User User { get; set;  }
         public override string ToString()
         {

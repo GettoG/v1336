@@ -1,34 +1,47 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using v1336.Model;
+using v1336.Rep;
+using v1336.View;
 
 namespace v1336.ViewModel 
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
     public class MainVM : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        public ObservableCollection<Order> Orders => new ObservableCollection<Order>(Rep.GetAll());
+       
+        private OrderRep Rep { get; set; } = new OrderRep();
+
+        public Order SelectedOrder { get; set; }
         public MainVM()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+
         }
+
+        public RelayCommand DeleteOrder => new RelayCommand(() =>
+        {
+            if (SelectedOrder == null || SelectedOrder.Id == 0) return;
+            Rep.Delete(SelectedOrder);
+            SelectedOrder = null;
+            RaisePropertyChanged("Orders");
+        });
+
+
+        public RelayCommand AddOrder => new RelayCommand(() =>
+        {
+            OrderV win = new OrderV(0);
+            win.Show();
+            RaisePropertyChanged("Orders");
+        });
+
+        public RelayCommand UpdateOrder => new RelayCommand(() =>
+        {
+            OrderV win = new OrderV(SelectedOrder.Id);
+            win.Show();
+            RaisePropertyChanged("Orders");
+        });
     }
 }

@@ -11,7 +11,7 @@ namespace v1336.Model
     public class Order
     {
         public int Id { get; set; }
-        public int Count { get { throw new Exception(); } }
+        public int Count { get { return 1; } }
         public double Procent { get; set; } = 0;
         public int StatusId { get; set; }
         [ForeignKey("StatusId")]
@@ -35,6 +35,6 @@ namespace v1336.Model
         [Required]
         public Customer Customer { get; set; }
         public string Comment { get; set; }
-        public List<OrderRow> Rows { get; set; }
+        public List<OrderRow> Rows { get; set; } = new List<OrderRow>();
     }
 }

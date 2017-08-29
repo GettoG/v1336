@@ -4,15 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:v1336"
-        xmlns:WpfControls="clr-namespace:Nevron.Nov.WpfControls;assembly=Nevron.Nov.WpfControls" xmlns:local1="clr-namespace:v1336.View" x:Class="v1336.View.MainWindow"
+        xmlns:WpfControls="clr-namespace:Nevron.Nov.WpfControls;assembly=Nevron.Nov.WpfControls" xmlns:local1="clr-namespace:v1336.View"
+    xmlns:local2="clr-namespace:v1336.Model"
+    xmlns:viewModel="clr-namespace:v1336.ViewModel"
+    x:Class="v1336.View.MainWindow"
         mc:Ignorable="d"
-        Title="В-1336" Height="579.8" Width="793.5">
+        Title="В-1336" Height="600" Width="1280">
+
+    <Window.DataContext>
+        <viewModel:MainVM></viewModel:MainVM>
+    </Window.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="190*"/>
-            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Menu x:Name="menu"  Height="23" VerticalAlignment="Top" Width="786" RenderTransformOrigin="0.025,0.585" Grid.ColumnSpan="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu"  Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.025,0.585">
             <MenuItem Header="Справочники" Width="94" Height="23">
                 <MenuItem Header="Заказчики" HorizontalAlignment="Left" Width="161" Margin="0,0,-21,0" Click="MenuItem_Click_Customers"/>
                 <MenuItem Header="Менеджеры" HorizontalAlignment="Left" Width="170" Margin="0,0,-30,0" Click="MenuItem_Click_Managers"/>
@@ -22,9 +34,34 @@
             </MenuItem>
             <MenuItem Header="Приоритеты" Height="23" Width="100" Click="MenuItem_Click_Priorities"/>
             <MenuItem Header="Проблемы при производстве" Height="23" Width="175" Click="MenuItem_Click_Problems"/>
-            <MenuItem Header="Авторизация" Height="23" Width="90" Margin="0,0,-739,0" Click="MenuItem_Click_Authorization"/>
+           
         </Menu>
 
+        <DataGrid SelectedItem="{Binding SelectedOrder, Mode=TwoWay}" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Orders}" AutoGenerateColumns="False" CanUserAddRows="false"  >
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding Path=Number, Mode=OneWay}" />
+                <DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Customer.Name, Mode=OneWay}" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description, Mode=OneWay}" />
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Count, Mode=OneWay}" />
+                <DataGridTextColumn Header="Дата заявки" Binding="{Binding Path=Date_b, Mode=OneWay}" />
+                <DataGridTextColumn Header="Дата отгрузки" Binding="{Binding Path=Date_e, Mode=OneWay}" />
+                <DataGridTextColumn Header="% выполнения" Binding="{Binding Path=Procent, Mode=OneWay}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status.Name, Mode=OneWay}" />
+                <DataGridTextColumn Header="Менеджер" Binding="{Binding Path=Manager, Mode=OneWay}" />
+                <DataGridTextColumn Header="Примечание" Binding="{Binding Path=Comment, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Добавить" Command="{Binding AddOrder}" Grid.Column="0" Margin="10 3 10 3" ></Button>
+            <Button Content="Изменить" Command="{Binding UpdateOrder}" CommandParameter="{Binding SelectedOrder}" Grid.Column="1" Margin="10 3 10 3" ></Button>
+            <Button Content="Удалить"  Command="{Binding DeleteOrder}"  CommandParameter="{Binding SelectedOrder}" Grid.Column="2" Margin="10 3 10 3" ></Button>
+        </Grid>
     </Grid>
 </Window>

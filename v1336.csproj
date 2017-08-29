@@ -115,36 +115,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201708070717179_InitialCreate.cs" />
-    <Compile Include="Migrations\201708070717179_InitialCreate.Designer.cs">
-      <DependentUpon>201708070717179_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708100608077_first.cs" />
-    <Compile Include="Migrations\201708100608077_first.Designer.cs">
-      <DependentUpon>201708100608077_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708210434200_managers.cs" />
-    <Compile Include="Migrations\201708210434200_managers.Designer.cs">
-      <DependentUpon>201708210434200_managers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708211101592_deleterequired.cs" />
-    <Compile Include="Migrations\201708211101592_deleterequired.Designer.cs">
-      <DependentUpon>201708211101592_deleterequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Com.cs" />
     <Compile Include="Model\CommentTheme.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\DBContext.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\IDbObject.cs" />
+    <Compile Include="Model\OrderRowHistory.cs" />
     <Compile Include="Rep\CustomerRep.cs" />
     <Compile Include="Rep\DepartmentRep.cs" />
     <Compile Include="Rep\EmployeeRep.cs" />
     <Compile Include="Rep\IRep.cs" />
     <Compile Include="Rep\ManagerRep.cs" />
     <Compile Include="Rep\NomenclatureRep.cs" />
+    <Compile Include="Rep\OrderRep.cs" />
     <Compile Include="ViewModel\CRUD\ItemsData.cs" />
     <Compile Include="ViewModel\CRUD\ItemsListVM.cs" />
     <Compile Include="ViewModel\CustomersVM.cs" />
@@ -162,6 +147,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\ManagersVM.cs" />
     <Compile Include="ViewModel\NomenclaturesVM.cs" />
+    <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\VMLocator.cs" />
     <Compile Include="View\Authorization.xaml.cs">
@@ -184,6 +170,9 @@
     </Compile>
     <Compile Include="View\Nomenclatures.xaml.cs">
       <DependentUpon>Nomenclatures.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderV.xaml.cs">
+      <DependentUpon>OrderV.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Priorities.xaml.cs">
       <DependentUpon>Priorities.xaml</DependentUpon>
@@ -231,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OrderV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Priorities.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -254,18 +247,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201708070717179_InitialCreate.resx">
-      <DependentUpon>201708070717179_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708100608077_first.resx">
-      <DependentUpon>201708100608077_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708210434200_managers.resx">
-      <DependentUpon>201708210434200_managers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708211101592_deleterequired.resx">
-      <DependentUpon>201708211101592_deleterequired.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

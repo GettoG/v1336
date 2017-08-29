@@ -15,10 +15,6 @@ namespace v1336.View
         public MainWindow()
         {
             InitializeComponent();
-            var db = new DBContext();
-            var manager = new Manager { };
-            //db.Managers.Add(manager);
-            db.SaveChanges();
         }
 
         private void MenuItem_Click_Customers(object sender, RoutedEventArgs e)

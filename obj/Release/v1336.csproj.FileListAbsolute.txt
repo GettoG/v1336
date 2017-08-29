@@ -1,0 +1,15 @@
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Authorization.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\CRUD\ItemsList.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Customers.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Departments.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\EditManager.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Employees.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Main.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Nomenclatures.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\OrderV.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Priorities.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\View\Problems.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\App.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\it\Desktop\rep\v1336\obj\Release\v1336_MarkupCompile.cache
+C:\Users\it\Desktop\rep\v1336\obj\Release\v1336_MarkupCompile.lref
