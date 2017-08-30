@@ -24,7 +24,7 @@
 
                 <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddItem}" Content="Добавить" Margin="0,0,0,10"/>
 
-                <Button  Grid.Row="1" Command="{Binding UpdateItem}" Margin="0,0,0,10" Content="Обновить"  />
+                <Button  Grid.Row="1" Command="{Binding UpdateItem}" Margin="0,0,0,10" Content="Изменить"  />
                 <Button  Grid.Row="2" Grid.ColumnSpan="3" Content="Удалить"   Margin="0,0,0,10"
                         Command="{Binding DeleteItem}"
                         CommandParameter="{Binding SelectedItem}"

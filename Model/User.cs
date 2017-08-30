@@ -10,7 +10,6 @@ namespace v1336.Model
     public class User
     {
         [Key]
-        [ForeignKey("Employee")]
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }

@@ -16,6 +16,7 @@
         public DbSet<Department> Departments { get; set; }
         public DbSet<Nomenclature> Nomenclatures { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
     }
 }

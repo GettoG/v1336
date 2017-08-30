@@ -19,7 +19,7 @@ namespace v1336.View
 
         private void MenuItem_Click_Customers(object sender, RoutedEventArgs e)
         {
-            var itemData = new ItemsData("Справочник заказчики", new CustomerRep(), typeof(EditManager));
+            var itemData = new ItemsData("Справочник заказчиков", new CustomerRep(), typeof(EditCustomer));
             ShowCatalog(itemData);
         }
 
@@ -31,26 +31,26 @@ namespace v1336.View
 
         private void MenuItem_Click_Managers(object sender, RoutedEventArgs e)
         {
-            var itemData = new ItemsData("Справочник менеджеры", new ManagerRep(), typeof(EditManager));
+            var itemData = new ItemsData("Справочник менеджеров", new ManagerRep(), typeof(EditManager));
             ShowCatalog(itemData);
         }
 
         private void MenuItem_Click_Departments(object sender, RoutedEventArgs e)
         {
-            Departments win = new Departments { Owner = this };
-            win.Show();
+            var itemData = new ItemsData("Справочник подразделений", new DepartmentRep(), typeof(EditDepartment));
+            ShowCatalog(itemData);
         }
 
         private void MenuItem_Click_Nomenclatures(object sender, RoutedEventArgs e)
         {
-            Nomenclatures win = new Nomenclatures { Owner = this };
-            win.Show();
+            var itemData = new ItemsData("Справочник изделий", new NomenclatureRep(), typeof(EditNomenclature));
+            ShowCatalog(itemData);
         }
 
         private void MenuItem_Click_Employees(object sender, RoutedEventArgs e)
         {
-            Employees win = new Employees { Owner = this };
-            win.Show();
+            var itemData = new ItemsData("Справочник сотрудников", new EmployeeRep(), typeof(EditEmployee));
+            ShowCatalog(itemData);
         }
 
         private void MenuItem_Click_Priorities(object sender, RoutedEventArgs e)

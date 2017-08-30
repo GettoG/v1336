@@ -44,7 +44,8 @@ namespace v1336.Rep
 
         ObservableCollection<IDbObject> IRep.GetAll()
         {
-            throw new System.NotImplementedException();
+            db.Nomenclatures.Load();
+            return new ObservableCollection<IDbObject>(db.Nomenclatures.Local);
         }
 
         public Nomenclature GetById(int id)

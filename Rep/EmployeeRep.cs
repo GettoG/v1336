@@ -8,17 +8,20 @@ namespace v1336.Rep
 {
     public class EmployeeRep : IRep
     {
-        private DBContext db;
+      
 
         public EmployeeRep()
         {
-            db = new DBContext();
+         
         }
 
         public ObservableCollection<Employee> GetAll()
         {
-            db.Employees.Load();
-            return db.Employees.Local;
+            using (var db = new DBContext())
+            {
+                db.Employees.Include("Department").Load();
+                return db.Employees.Local;
+            }
         }
 
         IDbObject IRep.GetById(int id)
@@ -38,37 +41,68 @@ namespace v1336.Rep
 
         public void Delete(IDbObject obj)
         {
-            throw new System.NotImplementedException();
+            using (var db = new DBContext())
+            {
+                var item = db.Employees.First(c => c.Id == obj.Id);
+                db.Employees.Remove(item);
+                db.SaveChanges();
+            }
         }
 
         ObservableCollection<IDbObject> IRep.GetAll()
         {
-            throw new System.NotImplementedException();
+            using (var db = new DBContext())
+            {
+                return new ObservableCollection<IDbObject>(db.Employees.Include("Department"));
+            }
+           
         }
 
         public Employee GetById(int id)
         {
-            return db.Employees.FirstOrDefault(x => x.Id == id);
+            using (var db = new DBContext())
+            {
+                return db.Employees.FirstOrDefault(x => x.Id == id);
+            }
+            
         }
 
         public void Add(Employee obj)
         {
-            db.Employees.Add(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Employees.Add(obj);
+                db.Entry(obj).State = EntityState.Added;
+                db.SaveChanges();
+            }
+
+           
         }
 
         public void Update(Employee obj)
         {
-            db.Employees.Attach(obj);
-            var entry = db.Entry(obj);
-            entry.Property(e => e.FirstName).IsModified = true;
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Employees.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.Property(e => e.DepartmentId).IsModified = true;
+                entry.Property(e => e.FatherName).IsModified = true;
+                entry.Property(e => e.LastName).IsModified = true;
+                entry.Property(e => e.FirstName).IsModified = true;
+                entry.Property(e => e.Phone).IsModified = true;
+                db.SaveChanges();
+            }
+           
         }
 
         public void Delete(Employee obj)
         {
-            db.Employees.Remove(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Employees.Remove(obj);
+                db.SaveChanges();
+            }
+          
         }
     }
 }

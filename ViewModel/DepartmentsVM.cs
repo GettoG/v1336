@@ -38,7 +38,7 @@ namespace v1336.ViewModel
             {
                 if (_departments == null)
                 {
-                    _departments = rep.GetAll();
+                    _departments = new ObservableCollection<Department>(rep.GetAll());
                     _departments.CollectionChanged += UpdateDepartment;
                 }
                 return _departments;

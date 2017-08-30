@@ -11,7 +11,6 @@ namespace v1336.Model
     public class Employee : IDbObject
     {
         [Key]
-        [ForeignKey("User")]
         public int Id { get; set; }
 
         [Required]
@@ -22,7 +21,6 @@ namespace v1336.Model
         
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
-        public User User { get; set;  }
         public override string ToString()
         {
             return $"{LastName} {FirstName} {FatherName} ({Phone})";

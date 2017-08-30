@@ -18,9 +18,6 @@ using v1336.ViewModel.CRUD;
 
 namespace v1336.View
 {
-    /// <summary>
-    /// Логика взаимодействия для EditManager.xaml
-    /// </summary>
     public partial class EditManager : Window
     {
         public int Id { get; set; }

@@ -45,10 +45,9 @@ namespace v1336.Rep
         }
 
 
-        public ObservableCollection<Department> GetAll()
+        public List<Department> GetAll()
         {
-            db.Departments.Load();
-            return db.Departments.Local;
+            return db.Departments.ToList();
         }
 
         public Department GetById(int id)

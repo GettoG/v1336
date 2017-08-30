@@ -23,7 +23,6 @@ namespace v1336.Rep
                 .Include("Status")
                 .Include("Customer")
                 .ToList();
-
         }
 
         public Order GetById(int id)

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace v1336.View
 {
     /// <summary>
-    /// Логика взаимодействия для Nomenclatures.xaml
+    /// Логика взаимодействия для EditDepartment.xaml
     /// </summary>
-    public partial class Nomenclatures : Window
+    public partial class EditDepartment : Window
     {
-        public Nomenclatures()
+        public EditDepartment()
         {
             InitializeComponent();
         }

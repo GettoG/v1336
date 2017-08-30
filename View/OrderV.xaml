@@ -84,25 +84,34 @@
 
             <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Margin="5">
                 <TextBlock Text="Описание" HorizontalAlignment="Center" ></TextBlock>
-                <TextBox  Height="100" Text="{Binding Path=Order.Description, Mode=TwoWay}"></TextBox>
+                <TextBox  Height="100" Text="{Binding Path=Order.Description, Mode=TwoWay}" TextWrapping="Wrap">
+                </TextBox>
             </StackPanel>
             
             <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="3" Margin="5">
                 <TextBlock Text="Примечание" HorizontalAlignment="Center"></TextBlock>
-                <TextBox  Height="100" Text="{Binding Path=Order.Comment, Mode=TwoWay}"></TextBox>
+                <TextBox  Height="100" Text="{Binding Path=Order.Comment, Mode=TwoWay}" TextWrapping="Wrap"></TextBox>
             </StackPanel>
 
         <DataGrid Grid.Row="3" Grid.ColumnSpan="6" Grid.Column="0" ItemsSource="{Binding Path=Order.Rows, Mode=TwoWay}" AutoGenerateColumns="False" CanUserAddRows="false"
                  >
             
             <DataGrid.Columns>
-                <DataGridTextColumn Width="200*" Header="Номенклатура" Binding="{Binding Path=Nomenclature, Mode=OneWay}" />
-                    <DataGridTextColumn Width="100*" Header="Количество" Binding="{Binding Path=Quantity, Mode=OneWay}" />
-                
-                    <DataGridTextColumn Width="200*" Header="Подразделение" Binding="{Binding Path=DepartmentsStr, Mode=OneWay}" />
-                <DataGridTextColumn Width="200*" Header="% выполнения" Binding="{Binding Path=Procent, Mode=OneWay}" />
-                <DataGridTextColumn Width="200*" Header="Примечание" Binding="{Binding Path=Comment, Mode=OneWay}" />
-                <DataGridTextColumn Width="200*" Header="Исполнитель" Binding="{Binding Path=Employee, Mode=OneWay}" />
+                <DataGridComboBoxColumn
+                    Width="200*" Header="Категория"
+                    ItemsSource="{Binding Path=NomenclatureCategory}"
+                    DisplayMemberPath="Name"
+                    SelectedValuePath="Id"
+                    SelectedValueBinding="{Binding Path=Order.NomenclatureCategory.Id, Mode=TwoWay }"
+                >
+                </DataGridComboBoxColumn>
+                    <DataGridComboBoxColumn Width="200*" Header="Номенклатура" 
+                                            ItemsSource="{Binding Path=Nomenclature}"
+                                            DisplayMemberPath="Name"
+                                            SelectedValuePath="Id"
+                                            SelectedValueBinding="{Binding Path=Order.Nomenclature.Id, Mode=TwoWay }"/>
+                    <DataGridTextColumn Width="100*" Header="Количество" Binding="{Binding Path=Quantity, Mode=TwoWay}" />
+                    
             </DataGrid.Columns>
         </DataGrid>
 
@@ -112,3 +121,4 @@
     </Grid>
    </Grid>
 </Window>
+

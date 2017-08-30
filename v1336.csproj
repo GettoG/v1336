@@ -115,7 +115,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Com.cs" />
+    <Compile Include="Migrations\201708300357453_InitialCreate.cs" />
+    <Compile Include="Migrations\201708300357453_InitialCreate.Designer.cs">
+      <DependentUpon>201708300357453_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301057222_Employee.cs" />
+    <Compile Include="Migrations\201708301057222_Employee.Designer.cs">
+      <DependentUpon>201708301057222_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301112457_Employee1.cs" />
+    <Compile Include="Migrations\201708301112457_Employee1.Designer.cs">
+      <DependentUpon>201708301112457_Employee1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301126059_Employee2.cs" />
+    <Compile Include="Migrations\201708301126059_Employee2.Designer.cs">
+      <DependentUpon>201708301126059_Employee2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\CommentTheme.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\DBContext.cs" />
@@ -134,7 +151,8 @@
     <Compile Include="ViewModel\CRUD\ItemsListVM.cs" />
     <Compile Include="ViewModel\CustomersVM.cs" />
     <Compile Include="ViewModel\DepartmentsVM.cs" />
-    <Compile Include="ViewModel\EmployeesVM.cs" />
+    <Compile Include="ViewModel\EditCustomerVM.cs" />
+    <Compile Include="ViewModel\EditEmployeeVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="Model\Manager.cs" />
@@ -156,20 +174,20 @@
     <Compile Include="View\CRUD\ItemsList.xaml.cs">
       <DependentUpon>ItemsList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Customers.xaml.cs">
-      <DependentUpon>Customers.xaml</DependentUpon>
+    <Compile Include="View\EditCustomer.xaml.cs">
+      <DependentUpon>EditCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Departments.xaml.cs">
-      <DependentUpon>Departments.xaml</DependentUpon>
+    <Compile Include="View\EditDepartment.xaml.cs">
+      <DependentUpon>EditDepartment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditEmployee.xaml.cs">
+      <DependentUpon>EditEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditManager.xaml.cs">
       <DependentUpon>EditManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Employees.xaml.cs">
-      <DependentUpon>Employees.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Nomenclatures.xaml.cs">
-      <DependentUpon>Nomenclatures.xaml</DependentUpon>
+    <Compile Include="View\EditNomenclature.xaml.cs">
+      <DependentUpon>EditNomenclature.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderV.xaml.cs">
       <DependentUpon>OrderV.xaml</DependentUpon>
@@ -188,11 +206,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Customers.xaml">
+    <Page Include="View\EditCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Departments.xaml">
+    <Page Include="View\EditDepartment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,7 +222,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Employees.xaml">
+    <Page Include="View\EditNomenclature.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,10 +238,6 @@
       <DependentUpon>Main.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Nomenclatures.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\OrderV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -247,6 +265,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201708300357453_InitialCreate.resx">
+      <DependentUpon>201708300357453_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301057222_Employee.resx">
+      <DependentUpon>201708301057222_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301112457_Employee1.resx">
+      <DependentUpon>201708301112457_Employee1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301126059_Employee2.resx">
+      <DependentUpon>201708301126059_Employee2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

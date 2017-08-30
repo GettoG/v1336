@@ -40,16 +40,30 @@
         <DataGrid SelectedItem="{Binding SelectedOrder, Mode=TwoWay}" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Orders}" AutoGenerateColumns="False" CanUserAddRows="false"  >
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер" Binding="{Binding Path=Number, Mode=OneWay}" />
-                <DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Customer.Name, Mode=OneWay}" />
-                <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description, Mode=OneWay}" />
-                <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Count, Mode=OneWay}" />
-                <DataGridTextColumn Header="Дата заявки" Binding="{Binding Path=Date_b, Mode=OneWay}" />
-                <DataGridTextColumn Header="Дата отгрузки" Binding="{Binding Path=Date_e, Mode=OneWay}" />
-                <DataGridTextColumn Header="% выполнения" Binding="{Binding Path=Procent, Mode=OneWay}" />
-                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status.Name, Mode=OneWay}" />
-                <DataGridTextColumn Header="Менеджер" Binding="{Binding Path=Manager, Mode=OneWay}" />
-                <DataGridTextColumn Header="Примечание" Binding="{Binding Path=Comment, Mode=OneWay}" />
+                <DataGridTextColumn Header="Номер" Binding="{Binding Path=Number, Mode=OneWay}" Width="60*"/>
+                <DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Customer.Name, Mode=OneWay}" Width="150*" />
+
+                <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description, Mode=OneWay}" Width="200*" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Count, Mode=OneWay}" Width="60*" />
+                <DataGridTextColumn Header="Дата заявки" Binding="{Binding Path=Date_b, Mode=OneWay}" Width="80*"/>
+                <DataGridTextColumn Header="Дата отгрузки" Binding="{Binding Path=Date_e, Mode=OneWay}" Width="80*"/>
+                <DataGridTextColumn Header="% выполнения" Binding="{Binding Path=Procent, Mode=OneWay}" Width="80*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status.Name, Mode=OneWay}" Width="120*"/>
+                <DataGridTextColumn Header="Менеджер" Binding="{Binding Manager.FullName, Mode=OneWay}" Width="120*"  />
+                <DataGridTextColumn Header="Примечание" Binding="{Binding Path=Comment, Mode=OneWay}" Width="150*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
