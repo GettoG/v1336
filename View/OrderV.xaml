@@ -8,8 +8,8 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:model="clr-namespace:v1336.Model"
         mc:Ignorable="d"
-        Title="Заявка" Height="581.417" Width="1054.32">
-    
+        Title="Заявка" Height="741.917" Width="1054.32">
+
     <Window.DataContext>
         <ObjectDataProvider ObjectType="viewModel:OrderVM"
                             xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -27,59 +27,62 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="844*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1" Grid.Row="1">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="140" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="40" />
+        <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="140" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <TextBlock Text ="№ заявки" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" ></TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=Order.Number, Mode=TwoWay}" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"  />
+            <TextBlock Text ="№ заявки" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" ></TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=Order.Number, Mode=TwoWay}" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150"  />
 
-        <TextBlock Text ="Заказчик" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" ></TextBlock>
-        <ComboBox 
-                  Grid.Column="3" Grid.Row="0"
-                  ItemsSource="{Binding Path=Customers}"
-                  DisplayMemberPath="Name"
-                  SelectedValuePath="Id"
-                  SelectedValue="{ Binding Path=Order.Customer.Id, Mode=TwoWay }"
-                  Height="25"
-                  HorizontalAlignment="Left" VerticalAlignment="Center"
-                  Width="150"
+            <TextBlock Text ="Заказчик" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" ></TextBlock>
+            <ComboBox 
+                Grid.Column="3" Grid.Row="0"
+                ItemsSource="{Binding Path=Customers}"
+                DisplayMemberPath="Name"
+                SelectedValuePath="Id"
+                SelectedValue="{ Binding Path=Order.Customer.Id, Mode=TwoWay }"
+                Height="25"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Width="150"
             />
 
-        <TextBlock Text ="Менеджер" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
-        <ComboBox 
-            Grid.Column="5" Grid.Row="0"
-            ItemsSource="{Binding Path=Managers}"
-            DisplayMemberPath="FullName"
-            SelectedValuePath="Id"
-            SelectedValue="{Binding Path=Order.Manager.Id, Mode=TwoWay }"
-            Height="25"
-            HorizontalAlignment="Left" VerticalAlignment="Center"
-            Width="150"
-        />
+            <TextBlock Text ="Менеджер" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
+            <ComboBox 
+                Grid.Column="5" Grid.Row="0"
+                ItemsSource="{Binding Path=Managers}"
+                DisplayMemberPath="FullName"
+                SelectedValuePath="Id"
+                SelectedValue="{Binding Path=Order.Manager.Id, Mode=TwoWay }"
+                Height="25"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Width="150"
+            />
 
-        <TextBlock TextWrapping="Wrap" Text="Дата появления заявки" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" ></TextBlock>
-        <DatePicker Grid.Row="1" Grid.Column="1" Height="25" 
-                    SelectedDate="{Binding Path=Order.Date_b, Mode=TwoWay,TargetNullValue={x:Static System:DateTime.Now}}"></DatePicker>
+            <TextBlock TextWrapping="Wrap" Text="Дата появления заявки" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center" ></TextBlock>
+            <DatePicker Grid.Row="1" Grid.Column="1" Height="25" 
+                        SelectedDate="{Binding Path=Order.Date_b, Mode=TwoWay,TargetNullValue={x:Static System:DateTime.Now}}"></DatePicker>
 
-        <TextBlock TextWrapping="Wrap" Text="Планируемая дата отгрузки" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
+            <TextBlock TextWrapping="Wrap" Text="Планируемая дата отгрузки" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
             <DatePicker Grid.Row="1" Grid.Column="5" Height="25" SelectedDate="{Binding Path=Order.Date_e, Mode=TwoWay,TargetNullValue={x:Static System:DateTime.Now}}"></DatePicker>
 
             <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Margin="5">
@@ -87,38 +90,70 @@
                 <TextBox  Height="100" Text="{Binding Path=Order.Description, Mode=TwoWay}" TextWrapping="Wrap">
                 </TextBox>
             </StackPanel>
-            
+
             <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="3" Margin="5">
                 <TextBlock Text="Примечание" HorizontalAlignment="Center"></TextBlock>
                 <TextBox  Height="100" Text="{Binding Path=Order.Comment, Mode=TwoWay}" TextWrapping="Wrap"></TextBox>
             </StackPanel>
 
-        <DataGrid Grid.Row="3" Grid.ColumnSpan="6" Grid.Column="0" ItemsSource="{Binding Path=Order.Rows, Mode=TwoWay}" AutoGenerateColumns="False" CanUserAddRows="false"
-                 >
-            
-            <DataGrid.Columns>
-                <DataGridComboBoxColumn
-                    Width="200*" Header="Категория"
-                    ItemsSource="{Binding Path=NomenclatureCategory}"
-                    DisplayMemberPath="Name"
-                    SelectedValuePath="Id"
-                    SelectedValueBinding="{Binding Path=Order.NomenclatureCategory.Id, Mode=TwoWay }"
-                >
-                </DataGridComboBoxColumn>
-                    <DataGridComboBoxColumn Width="200*" Header="Номенклатура" 
-                                            ItemsSource="{Binding Path=Nomenclature}"
-                                            DisplayMemberPath="Name"
-                                            SelectedValuePath="Id"
-                                            SelectedValueBinding="{Binding Path=Order.Nomenclature.Id, Mode=TwoWay }"/>
-                    <DataGridTextColumn Width="100*" Header="Количество" Binding="{Binding Path=Quantity, Mode=TwoWay}" />
-                    
-            </DataGrid.Columns>
-        </DataGrid>
 
-        <Button Content="Сохранить" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="4" Width="120" Height="30" HorizontalAlignment="Left" Margin="20 0 0 0"></Button>
-        <Button Content="Отмена" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="4" Width="120" Height="30" HorizontalAlignment="Right" Margin="0 0 20 0"></Button>
 
+            <Border BorderBrush="Black" CornerRadius="5" Margin="20" BorderThickness="1" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="3"  Grid.Row="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Grid.Row="0" Grid.ColumnSpan="6" Margin="10" Grid.Column="0" ItemsSource="{Binding Path=Order.Rows, Mode=TwoWay}" AutoGenerateColumns="False" CanUserAddRows="false">
+
+                        <DataGrid.Columns>
+                            <DataGridComboBoxColumn
+                                Width="200*" Header="Категория"
+                                ItemsSource="{Binding Path=NomenclatureCategory}"
+                                DisplayMemberPath="Name"
+                                SelectedValuePath="Id"
+                                SelectedValueBinding="{Binding Path=Order.NomenclatureCategory.Id, Mode=TwoWay }"
+                            >
+                            </DataGridComboBoxColumn>
+                            <DataGridComboBoxColumn Width="200*" Header="Номенклатура" 
+                                                    ItemsSource="{Binding Path=Nomenclature}"
+                                                    DisplayMemberPath="Name"
+                                                    SelectedValuePath="Id"
+                                                    SelectedValueBinding="{Binding Path=Order.Nomenclature.Id, Mode=TwoWay }"/>
+                            <DataGridTextColumn Width="100*" Header="Количество" Binding="{Binding Path=Quantity, Mode=TwoWay}" />
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <TextBlock Text="Категория изделия: " Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+                    <ComboBox Grid.Column="1" Grid.Row="1" Height="25"></ComboBox>
+
+                    <TextBlock Text="Категория изделия: " Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+                    <ComboBox Grid.Column="3" Height="25" Grid.Row="1" ></ComboBox>
+
+                    <TextBlock Text="Количество: " Grid.Column="4" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Column="5" Grid.Row="1" Height="25" Width="100" HorizontalAlignment="Left"></TextBox>
+
+                    <Button Content="Добавить" Grid.Column="4" Grid.Row="3" Width="120" Height="30" HorizontalAlignment="Right" Margin="20 0 0 0"></Button>
+                    <Button Content="Удалить" Grid.Column="5" Grid.Row="3" Width="120" Height="30" HorizontalAlignment="Left" Margin="20 0 0 0"></Button>
+                </Grid>
+            </Border>
+
+            <Button Content="Сохранить" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="6" Width="120" Height="30" HorizontalAlignment="Left" Margin="20 0 0 0"></Button>
+            <Button Content="Отмена" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="6" Width="120" Height="30" HorizontalAlignment="Right" Margin="0 0 20 0"></Button>
+
+        </Grid>
     </Grid>
-   </Grid>
 </Window>
 

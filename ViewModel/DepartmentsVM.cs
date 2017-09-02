@@ -103,9 +103,5 @@ namespace v1336.ViewModel
                 RaisePropertyChanged("selectedDepartment");
             }
         }
-
-        public RelayCommand AddDepartmentCommand { get => AddDepartmentCommand2; set => AddDepartmentCommand2 = value; }
-        public RelayCommand AddDepartmentCommand1 { get => AddDepartmentCommand2; set => AddDepartmentCommand2 = value; }
-        public RelayCommand AddDepartmentCommand2 { get => _addDepartmentCommand; set => _addDepartmentCommand = value; }
     }
 }
