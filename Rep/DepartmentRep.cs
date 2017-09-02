@@ -1,79 +1,59 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Windows.Documents;
 using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class DepartmentRep : IRep
+    public class DepartmentRep : AbstractRep< Department>
     {
-        private DBContext db;
-
-        public DepartmentRep()
+        public override IEnumerable<Department> GetAll()
         {
-            db = new DBContext();
+            using (var db = new DBContext())
+            {
+                return db. Departments.ToList();
+            }
         }
 
-        
-
-        IDbObject IRep.GetById(int id)
+        public override Department GetById(int id)
         {
-            return GetById(id);
+            using (var db = new DBContext())
+            {
+                return db. Departments.FirstOrDefault(x => x.Id == id);
+            }
         }
 
-        public void Add(IDbObject obj)
+        public override void Add(Department obj)
         {
-            
+            using (var db = new DBContext())
+            {
+                db. Departments.Add(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Added;
+                db.SaveChanges();
+            }
         }
 
-        public void Update(IDbObject obj)
+        public override void Update( Department obj)
         {
-            throw new System.NotImplementedException();
+            using (var db = new DBContext())
+            {
+                db. Departments.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
-        public void Delete(IDbObject obj)
+        public override void Delete(Department obj)
         {
-            throw new System.NotImplementedException();
-        }
-
-        ObservableCollection<IDbObject> IRep.GetAll()
-        {
-            db.Departments.Load();
-            return new ObservableCollection<IDbObject>(db.Departments.Local);
-        }
-
-
-        public List<Department> GetAll()
-        {
-            return db.Departments.ToList();
-        }
-
-        public Department GetById(int id)
-        {
-            return db.Departments.FirstOrDefault(x => x.Id == id);
-        }
-
-        public void Add(Department obj)
-        {
-            db.Departments.Add(obj);
-            db.SaveChanges();
-        }
-
-        public void Update(Department obj)
-        {
-            db.Departments.Attach(obj);
-            var entry = db.Entry(obj);
-            entry.Property(e => e.Name).IsModified = true;
-            db.SaveChanges();
-            GetAll();
-        }
-
-        public void Delete(Department obj)
-        {
-            db.Departments.Remove(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db. Departments.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Deleted;
+                db.SaveChanges();
+            }
         }
     }
 }

@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\getto_g\Desktop\work\v1336\obj\Debug\
+=======
+D:\git_rep\v1336\obj\Debug\
+>>>>>>> 6e572e3dcdf0191ae511131bed9b6c3ac9fc7f22
 v1336
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\getto_g\Desktop\work\v1336\App.xaml
 111183007394
 
 6064741218
 331537953150
 View\Authorization.xaml;View\CRUD\ItemsList.xaml;View\EditCustomer.xaml;View\EditDepartment.xaml;View\EditEmployee.xaml;View\EditManager.xaml;View\EditNomenclature.xaml;View\Main.xaml;View\OrderV.xaml;View\Priorities.xaml;View\Problems.xaml;
+=======
+D:\git_rep\v1336\App.xaml
+11-332831653
+
+592077439911
+34-629876046
+View\Authorization.xaml;View\CRUD\ItemsList.xaml;View\CRUD\Edit\EditCustomer.xaml;View\CRUD\Edit\EditDepartment.xaml;View\CRUD\Edit\EditEmployee.xaml;View\CRUD\Edit\EditManager.xaml;View\CRUD\Edit\EditNomenclature.xaml;View\Main.xaml;View\OrderV.xaml;View\Priorities.xaml;View\Problems.xaml;
+>>>>>>> 6e572e3dcdf0191ae511131bed9b6c3ac9fc7f22
 
 False
 

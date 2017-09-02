@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace v1336.Model
 {
-    public class Order
+    public class Order : IDbObject
     {
         public int Id { get; set; }
         public int Count { get { return 1; } }

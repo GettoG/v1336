@@ -1,77 +1,59 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Windows.Documents;
 using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class ManagerRep : IRep
+    public class ManagerRep : AbstractRep<Manager>
     {
-        private DBContext db;
-
-        public ManagerRep()
+        public override IEnumerable<Manager> GetAll()
         {
-            db = new DBContext();
+            using (var db = new DBContext())
+            {
+                return db.Managers.ToList();
+            }
         }
 
-        public ObservableCollection<Manager> GetAll()
+        public override Manager GetById(int id)
         {
-            db.Managers.Load();
-            return db.Managers.Local;
+            using (var db = new DBContext())
+            {
+                return db.Managers.FirstOrDefault(x => x.Id == id);
+            }
         }
 
-        IDbObject IRep.GetById(int id)
+        public override void Add(Manager obj)
         {
-            return GetById(id);
+            using (var db = new DBContext())
+            {
+                db.Managers.Add(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Added;
+                db.SaveChanges();
+            }
         }
 
-        public void Add(IDbObject obj)
+        public override void Update(Manager obj)
         {
-            throw new System.NotImplementedException();
+            using (var db = new DBContext())
+            {
+                db.Managers.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Modified; 
+                db.SaveChanges();
+            }
         }
 
-        public void Update(IDbObject obj)
+        public override void Delete(Manager obj)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Delete(IDbObject obj)
-        {
-            db.Managers.Remove(obj as Manager);
-            db.SaveChanges();
-        }
-
-        ObservableCollection<IDbObject> IRep.GetAll()
-        {
-            db.Managers.Load();
-            return new ObservableCollection<IDbObject>(db.Managers.Local);
-        }
-
-        public Manager GetById(int id)
-        {
-            return db.Managers.FirstOrDefault(x => x.Id == id);
-        }
-
-        public void Add(Manager obj)
-        {
-            db.Managers.Add(obj);
-            db.SaveChanges();
-        }
-
-        public void Update(Manager obj)
-        {
-            db.Managers.Attach(obj);
-            var entry = db.Entry(obj);
-            entry.Property(e => e.FirstName).IsModified = true;
-            db.SaveChanges();
-        }
-
-        public void Delete(Manager obj)
-        {
-            db.Managers.Remove(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Managers.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Deleted;
+                db.SaveChanges();
+            }
         }
     }
 }

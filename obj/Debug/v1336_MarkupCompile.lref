@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 FC:\Users\getto_g\Desktop\work\v1336\App.xaml;;
 FC:\Users\getto_g\Desktop\work\v1336\View\Authorization.xaml;;
@@ -11,4 +12,19 @@ FC:\Users\getto_g\Desktop\work\v1336\View\Main.xaml;;
 FC:\Users\getto_g\Desktop\work\v1336\View\OrderV.xaml;;
 FC:\Users\getto_g\Desktop\work\v1336\View\Priorities.xaml;;
 FC:\Users\getto_g\Desktop\work\v1336\View\Problems.xaml;;
+=======
+﻿D:\git_rep\v1336\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FD:\git_rep\v1336\App.xaml;;
+FD:\git_rep\v1336\View\Authorization.xaml;;
+FD:\git_rep\v1336\View\CRUD\ItemsList.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditCustomer.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditDepartment.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditEmployee.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditManager.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditNomenclature.xaml;;
+FD:\git_rep\v1336\View\Main.xaml;;
+FD:\git_rep\v1336\View\OrderV.xaml;;
+FD:\git_rep\v1336\View\Priorities.xaml;;
+FD:\git_rep\v1336\View\Problems.xaml;;
+>>>>>>> 6e572e3dcdf0191ae511131bed9b6c3ac9fc7f22
 

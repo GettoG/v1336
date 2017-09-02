@@ -41,7 +41,7 @@ namespace v1336.ViewModel
             {
                 if (_managers == null)
                 {
-                    _managers = rep.GetAll();
+                    _managers = new ObservableCollection<Manager>(rep.GetAll());
                     _managers.CollectionChanged += UpdateManager;
                 }
                 return _managers;
