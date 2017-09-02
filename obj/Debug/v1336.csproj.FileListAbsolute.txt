@@ -1,19 +1,3 @@
-D:\git_rep\v1336\obj\Debug\v1336.csprojResolveAssemblyReference.cache
-D:\git_rep\v1336\obj\Debug\View\Authorization.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\ItemsList.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditCustomer.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditDepartment.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditEmployee.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditManager.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditNomenclature.g.cs
-D:\git_rep\v1336\obj\Debug\View\Main.g.cs
-D:\git_rep\v1336\obj\Debug\View\OrderV.g.cs
-D:\git_rep\v1336\obj\Debug\View\Priorities.g.cs
-D:\git_rep\v1336\obj\Debug\View\Problems.g.cs
-D:\git_rep\v1336\obj\Debug\App.g.cs
-D:\git_rep\v1336\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\git_rep\v1336\obj\Debug\v1336_MarkupCompile.cache
-D:\git_rep\v1336\obj\Debug\v1336_MarkupCompile.lref
 D:\git_rep\v1336\bin\Debug\v1336.exe.config
 D:\git_rep\v1336\bin\Debug\v1336.exe
 D:\git_rep\v1336\bin\Debug\v1336.pdb
@@ -58,30 +42,14 @@ D:\git_rep\v1336\bin\Debug\Nevron.Nov.Schedule.xml
 D:\git_rep\v1336\bin\Debug\Nevron.Nov.Text.xml
 D:\git_rep\v1336\bin\Debug\Nevron.Nov.WinFormControls.xml
 D:\git_rep\v1336\bin\Debug\Nevron.Nov.WpfControls.xml
-<<<<<<< HEAD
-D:\git_rep\v1336\bin\Debug\de\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\en\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\es\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\it\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-D:\git_rep\v1336\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-<<<<<<< HEAD
 D:\git_rep\v1336\obj\Debug\v1336.csprojResolveAssemblyReference.cache
 D:\git_rep\v1336\obj\Debug\View\Authorization.g.cs
 D:\git_rep\v1336\obj\Debug\View\CRUD\ItemsList.g.cs
-D:\git_rep\v1336\obj\Debug\View\EditCustomer.g.cs
-D:\git_rep\v1336\obj\Debug\View\EditDepartment.g.cs
-D:\git_rep\v1336\obj\Debug\View\EditEmployee.g.cs
-D:\git_rep\v1336\obj\Debug\View\EditManager.g.cs
-D:\git_rep\v1336\obj\Debug\View\EditNomenclature.g.cs
-=======
-D:\git_rep\v1336\obj\Debug\View\Authorization.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\ItemsList.g.cs
->>>>>>> master
+D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditCustomer.g.cs
+D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditDepartment.g.cs
+D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditEmployee.g.cs
+D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditManager.g.cs
+D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditNomenclature.g.cs
 D:\git_rep\v1336\obj\Debug\View\Main.g.cs
 D:\git_rep\v1336\obj\Debug\View\OrderV.g.cs
 D:\git_rep\v1336\obj\Debug\View\Priorities.g.cs
@@ -93,24 +61,11 @@ D:\git_rep\v1336\obj\Debug\v1336_MarkupCompile.lref
 D:\git_rep\v1336\obj\Debug\App.baml
 D:\git_rep\v1336\obj\Debug\View\Authorization.baml
 D:\git_rep\v1336\obj\Debug\View\CRUD\ItemsList.baml
-<<<<<<< HEAD
-D:\git_rep\v1336\obj\Debug\View\EditCustomer.baml
-D:\git_rep\v1336\obj\Debug\View\EditDepartment.baml
-D:\git_rep\v1336\obj\Debug\View\EditEmployee.baml
-D:\git_rep\v1336\obj\Debug\View\EditManager.baml
-D:\git_rep\v1336\obj\Debug\View\EditNomenclature.baml
-=======
->>>>>>> master
-=======
-D:\git_rep\v1336\obj\Debug\App.baml
-D:\git_rep\v1336\obj\Debug\View\Authorization.baml
-D:\git_rep\v1336\obj\Debug\View\CRUD\ItemsList.baml
 D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditCustomer.baml
 D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditDepartment.baml
 D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditEmployee.baml
 D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditManager.baml
 D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditNomenclature.baml
->>>>>>> master
 D:\git_rep\v1336\obj\Debug\View\Main.baml
 D:\git_rep\v1336\obj\Debug\View\OrderV.baml
 D:\git_rep\v1336\obj\Debug\View\Priorities.baml
@@ -125,20 +80,3 @@ D:\git_rep\v1336\obj\Debug\v1336.csproj.GenerateResource.Cache
 D:\git_rep\v1336\obj\Debug\v1336.csproj.CoreCompileInputs.cache
 D:\git_rep\v1336\obj\Debug\v1336.exe
 D:\git_rep\v1336\obj\Debug\v1336.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-D:\git_rep\v1336\obj\Debug\v1336.csprojResolveAssemblyReference.cache
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditCustomer.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditDepartment.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditEmployee.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditManager.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditNomenclature.g.cs
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditCustomer.baml
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditDepartment.baml
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditEmployee.baml
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditManager.baml
-D:\git_rep\v1336\obj\Debug\View\CRUD\Edit\EditNomenclature.baml
->>>>>>> master
-=======
->>>>>>> master
