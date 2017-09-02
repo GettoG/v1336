@@ -38,7 +38,7 @@ namespace v1336.ViewModel
             {
                 if (_customers == null)
                 {
-                    _customers = rep.GetAll();
+                    _customers = new ObservableCollection<Customer>(rep.GetAll());
                     _customers.CollectionChanged += UpdateCustomer;
                 }
                 return _customers;

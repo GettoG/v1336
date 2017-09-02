@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 D:\git_rep\v1336\App.xaml
+<<<<<<< HEAD
 111183007394
 
 642096383904
 331463596659
 View\Authorization.xaml;View\CRUD\ItemsList.xaml;View\EditCustomer.xaml;View\EditDepartment.xaml;View\EditEmployee.xaml;View\EditManager.xaml;View\EditNomenclature.xaml;View\Main.xaml;View\OrderV.xaml;View\Priorities.xaml;View\Problems.xaml;
+=======
+11-332831653
+
+63-185884699
+34-629876046
+View\Authorization.xaml;View\CRUD\ItemsList.xaml;View\CRUD\Edit\EditCustomer.xaml;View\CRUD\Edit\EditDepartment.xaml;View\CRUD\Edit\EditEmployee.xaml;View\CRUD\Edit\EditManager.xaml;View\CRUD\Edit\EditNomenclature.xaml;View\Main.xaml;View\OrderV.xaml;View\Priorities.xaml;View\Problems.xaml;
+>>>>>>> master
 
 True
 

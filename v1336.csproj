@@ -93,6 +93,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -143,6 +144,7 @@
     <Compile Include="Rep\CustomerRep.cs" />
     <Compile Include="Rep\DepartmentRep.cs" />
     <Compile Include="Rep\EmployeeRep.cs" />
+    <Compile Include="Rep\AbstractRep.cs" />
     <Compile Include="Rep\IRep.cs" />
     <Compile Include="Rep\ManagerRep.cs" />
     <Compile Include="Rep\NomenclatureRep.cs" />
@@ -151,8 +153,6 @@
     <Compile Include="ViewModel\CRUD\ItemsListVM.cs" />
     <Compile Include="ViewModel\CustomersVM.cs" />
     <Compile Include="ViewModel\DepartmentsVM.cs" />
-    <Compile Include="ViewModel\EditCustomerVM.cs" />
-    <Compile Include="ViewModel\EditEmployeeVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="Model\Manager.cs" />
@@ -174,19 +174,19 @@
     <Compile Include="View\CRUD\ItemsList.xaml.cs">
       <DependentUpon>ItemsList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditCustomer.xaml.cs">
+    <Compile Include="View\CRUD\Edit\EditCustomer.xaml.cs">
       <DependentUpon>EditCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditDepartment.xaml.cs">
+    <Compile Include="View\CRUD\Edit\EditDepartment.xaml.cs">
       <DependentUpon>EditDepartment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditEmployee.xaml.cs">
+    <Compile Include="View\CRUD\Edit\EditEmployee.xaml.cs">
       <DependentUpon>EditEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditManager.xaml.cs">
+    <Compile Include="View\CRUD\Edit\EditManager.xaml.cs">
       <DependentUpon>EditManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditNomenclature.xaml.cs">
+    <Compile Include="View\CRUD\Edit\EditNomenclature.xaml.cs">
       <DependentUpon>EditNomenclature.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderV.xaml.cs">
@@ -206,23 +206,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditCustomer.xaml">
+    <Page Include="View\CRUD\Edit\EditCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditDepartment.xaml">
+    <Page Include="View\CRUD\Edit\EditDepartment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditEmployee.xaml">
+    <Page Include="View\CRUD\Edit\EditEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditManager.xaml">
+    <Page Include="View\CRUD\Edit\EditManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditNomenclature.xaml">
+    <Page Include="View\CRUD\Edit\EditNomenclature.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -281,7 +281,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

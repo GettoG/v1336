@@ -1,77 +1,58 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Windows.Documents;
 using v1336.Model;
-
 namespace v1336.Rep
 {
-    class NomenclatureRep : IRep
+    public class NomenclatureRep : AbstractRep<Nomenclature>
     {
-        private DBContext db;
-
-        public NomenclatureRep()
+        public override IEnumerable<Nomenclature> GetAll()
         {
-            db = new DBContext();
+            using (var db = new DBContext())
+            {
+                return db.Nomenclatures.ToList();
+            }
         }
 
-        public ObservableCollection<Nomenclature> GetAll()
+        public override Nomenclature GetById(int id)
         {
-            db.Nomenclatures.Load();
-            return db.Nomenclatures.Local;
+            using (var db = new DBContext())
+            {
+                return db.Nomenclatures.FirstOrDefault(x => x.Id == id);
+            }
         }
 
-        IDbObject IRep.GetById(int id)
+        public override void Add(Nomenclature obj)
         {
-            return GetById(id);
+            using (var db = new DBContext())
+            {
+                db.Nomenclatures.Add(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Added;
+                db.SaveChanges();
+            }
         }
 
-        public void Add(IDbObject obj)
+        public override void Update(Nomenclature obj)
         {
-            throw new System.NotImplementedException();
+            using (var db = new DBContext())
+            {
+                db.Nomenclatures.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
-        public void Update(IDbObject obj)
+        public override void Delete(Nomenclature obj)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Delete(IDbObject obj)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        ObservableCollection<IDbObject> IRep.GetAll()
-        {
-            db.Nomenclatures.Load();
-            return new ObservableCollection<IDbObject>(db.Nomenclatures.Local);
-        }
-
-        public Nomenclature GetById(int id)
-        {
-            return db.Nomenclatures.FirstOrDefault(x=> x.Id == id);
-        }
-
-        public void Add(Nomenclature obj)
-        {
-            db.Nomenclatures.Add(obj);
-            db.SaveChanges();
-        }
-
-        public void Update(Nomenclature obj)
-        {
-            db.Nomenclatures.Attach(obj);
-            var entry = db.Entry(obj);
-            entry.Property(e => e.Name).IsModified = true;
-            db.SaveChanges();
-            GetAll();
-        }
-
-        public void Delete(Nomenclature obj)
-        {
-            db.Nomenclatures.Remove(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Nomenclatures.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Deleted;
+                db.SaveChanges();
+            }
         }
     }
 }

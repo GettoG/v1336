@@ -34,7 +34,7 @@ using v1336.View;
 using v1336.ViewModel;
 
 
-namespace v1336.View {
+namespace v1336.View.CRUD.Edit {
     
     
     /// <summary>
