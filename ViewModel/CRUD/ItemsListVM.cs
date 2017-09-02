@@ -34,7 +34,7 @@ namespace v1336.ViewModel.CRUD
         public IDbObject CurrentItem { get; set; }
         public IDbObject SelectedItem { get; set; }
 
-        public ObservableCollection<IDbObject> Items => rep.GetAll();
+        public IEnumerable<IDbObject> Items => rep.GetAll();
 
         private int GetSelectedId => SelectedItem?.Id ?? 0;
 

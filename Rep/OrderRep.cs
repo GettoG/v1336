@@ -1,60 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using v1336.Model;
 
 namespace v1336.Rep
 {
-    public class OrderRep 
+    public class OrderRep : AbstractRep<Order>
     {
-        private DBContext db;
-
-        public OrderRep()
+        public override IEnumerable<Order> GetAll()
         {
-            db = new DBContext();
+            using (var db = new DBContext())
+            {
+                return db.Orders.ToList();
+            }
         }
 
-        public List<Order> GetAll()
+        public override Order GetById(int id)
         {
-            return db.Orders
-                .Include("Manager")
-                .Include("Status")
-                .Include("Customer")
-                .ToList();
+            using (var db = new DBContext())
+            {
+                return db.Orders.FirstOrDefault(x => x.Id == id);
+            }
         }
 
-        public Order GetById(int id)
+        public override void Add(Order obj)
         {
-            var res = db.Orders
-                .Include("Manager")
-                .Include("Status")
-                .Include("Customer")
-                .Include("Rows")
-                .Include("Rows.Nomenclature")
-                .Include("Rows.Nomenclature.Departments")
-                .FirstOrDefault(x => x.Id == id);
-
-            return res;
+            using (var db = new DBContext())
+            {
+                db.Orders.Add(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Added;
+                db.SaveChanges();
+            }
         }
 
-        public void Add(Order obj)
+        public override void Update(Order obj)
         {
-            db.Orders.Add(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Orders.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Modified;
+                db.SaveChanges();
+            }
         }
 
-        public void Update(Order obj)
+        public override void Delete(Order obj)
         {
-            db.Orders.Attach(obj);
-            db.SaveChanges();
-        }
-
-        public void Delete(Order obj)
-        {
-            db.Orders.Remove(obj);
-            db.SaveChanges();
+            using (var db = new DBContext())
+            {
+                db.Orders.Attach(obj);
+                var entry = db.Entry(obj);
+                entry.State = EntityState.Deleted;
+                db.SaveChanges();
+            }
         }
     }
 }

@@ -1,14 +1,14 @@
-﻿
-FC:\Users\it\Desktop\rep\v1336\App.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\Authorization.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\CRUD\ItemsList.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\EditCustomer.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\EditDepartment.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\EditEmployee.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\EditManager.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\EditNomenclature.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\Main.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\OrderV.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\Priorities.xaml;;
-FC:\Users\it\Desktop\rep\v1336\View\Problems.xaml;;
+﻿D:\git_rep\v1336\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FD:\git_rep\v1336\App.xaml;;
+FD:\git_rep\v1336\View\Authorization.xaml;;
+FD:\git_rep\v1336\View\CRUD\ItemsList.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditCustomer.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditDepartment.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditEmployee.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditManager.xaml;;
+FD:\git_rep\v1336\View\CRUD\Edit\EditNomenclature.xaml;;
+FD:\git_rep\v1336\View\Main.xaml;;
+FD:\git_rep\v1336\View\OrderV.xaml;;
+FD:\git_rep\v1336\View\Priorities.xaml;;
+FD:\git_rep\v1336\View\Problems.xaml;;
 

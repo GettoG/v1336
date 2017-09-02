@@ -38,7 +38,7 @@ namespace v1336.ViewModel
             {
                 if (_nomenclatures == null)
                 {
-                    _nomenclatures = rep.GetAll();
+                   // _nomenclatures = new ObservableCollection<Nomenclature>(rep.GetAll());
                     _nomenclatures.CollectionChanged += UpdateNomenclature;
                 }
                 return _nomenclatures;
