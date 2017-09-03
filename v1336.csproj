@@ -116,113 +116,88 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201708300357453_InitialCreate.cs" />
-    <Compile Include="Migrations\201708300357453_InitialCreate.Designer.cs">
-      <DependentUpon>201708300357453_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708301057222_Employee.cs" />
-    <Compile Include="Migrations\201708301057222_Employee.Designer.cs">
-      <DependentUpon>201708301057222_Employee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708301112457_Employee1.cs" />
-    <Compile Include="Migrations\201708301112457_Employee1.Designer.cs">
-      <DependentUpon>201708301112457_Employee1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708301126059_Employee2.cs" />
-    <Compile Include="Migrations\201708301126059_Employee2.Designer.cs">
-      <DependentUpon>201708301126059_Employee2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Comment.cs" />
-    <Compile Include="Model\CommentTheme.cs" />
-    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\AbstartDictionaryObject.cs" />
+    <Compile Include="Model\Dictionary\Worker.cs" />
+    <Compile Include="Model\Dictionary\EmployeePost.cs" />
+    <Compile Include="Model\Dictionary\User.cs" />
+    <Compile Include="Model\Document\Comment.cs" />
+    <Compile Include="Model\Dictionary\CommentTheme.cs" />
+    <Compile Include="Model\Dictionary\Customer.cs" />
     <Compile Include="Model\DBContext.cs" />
-    <Compile Include="Model\Department.cs" />
-    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Dictionary\Department.cs" />
     <Compile Include="Model\IDbObject.cs" />
-    <Compile Include="Model\OrderRowHistory.cs" />
-    <Compile Include="Rep\CustomerRep.cs" />
-    <Compile Include="Rep\DepartmentRep.cs" />
-    <Compile Include="Rep\EmployeeRep.cs" />
+    <Compile Include="Model\Document\OrderRowHistory.cs" />
+    <Compile Include="Rep\Dictionary\UserRep.cs" />
+    <Compile Include="Rep\Dictionary\RoleRep.cs" />
+    <Compile Include="Rep\Dictionary\OrderRowStatus.cs" />
+    <Compile Include="Rep\Dictionary\CommentThemeRep.cs" />
+    <Compile Include="Rep\Dictionary\CustomerRep.cs" />
+    <Compile Include="Rep\Dictionary\DepartmentRep.cs" />
+    <Compile Include="Rep\Dictionary\WorkerPostRep.cs" />
+    <Compile Include="Rep\Dictionary\WorkerRep.cs" />
     <Compile Include="Rep\AbstractRep.cs" />
+    <Compile Include="Rep\Dictionary\NomenclatureCategoryRep.cs" />
+    <Compile Include="Rep\Document\CommentRep.cs" />
+    <Compile Include="Rep\Document\OrderRowRep.cs" />
+    <Compile Include="Rep\Document\OrderRowHistoryRep.cs" />
     <Compile Include="Rep\IRep.cs" />
-    <Compile Include="Rep\ManagerRep.cs" />
-    <Compile Include="Rep\NomenclatureRep.cs" />
-    <Compile Include="Rep\OrderRep.cs" />
-    <Compile Include="ViewModel\CRUD\ItemsData.cs" />
-    <Compile Include="ViewModel\CRUD\ItemsListVM.cs" />
-    <Compile Include="ViewModel\CustomersVM.cs" />
-    <Compile Include="ViewModel\DepartmentsVM.cs" />
+    <Compile Include="Rep\Dictionary\NomenclatureRep.cs" />
+    <Compile Include="Rep\Document\OrderRep.cs" />
+    <Compile Include="ViewModel\Dictionary\ItemsData.cs" />
+    <Compile Include="ViewModel\Dictionary\ItemsListVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
-    <Compile Include="Model\Manager.cs" />
-    <Compile Include="Model\Nomenclature.cs" />
-    <Compile Include="Model\NomenclatureCategory.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\OrderRow.cs" />
-    <Compile Include="Model\Role.cs" />
-    <Compile Include="Model\Status.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="ViewModel\ManagersVM.cs" />
-    <Compile Include="ViewModel\NomenclaturesVM.cs" />
+    <Compile Include="Model\Dictionary\Nomenclature.cs" />
+    <Compile Include="Model\Dictionary\NomenclatureCategory.cs" />
+    <Compile Include="Model\Document\Order.cs" />
+    <Compile Include="Model\Document\OrderRow.cs" />
+    <Compile Include="Model\Dictionary\Role.cs" />
+    <Compile Include="Model\Dictionary\OrderRowStatus.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\VMLocator.cs" />
     <Compile Include="View\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CRUD\ItemsList.xaml.cs">
-      <DependentUpon>ItemsList.xaml</DependentUpon>
+    <Compile Include="View\Dictionary\EditEmployeePost.xaml.cs">
+      <DependentUpon>EditEmployeePost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CRUD\Edit\EditCustomer.xaml.cs">
-      <DependentUpon>EditCustomer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\CRUD\Edit\EditDepartment.xaml.cs">
+    <Compile Include="View\Dictionary\EditDepartment.xaml.cs">
       <DependentUpon>EditDepartment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CRUD\Edit\EditEmployee.xaml.cs">
-      <DependentUpon>EditEmployee.xaml</DependentUpon>
+    <Compile Include="View\Dictionary\ItemsList.xaml.cs">
+      <DependentUpon>ItemsList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CRUD\Edit\EditManager.xaml.cs">
-      <DependentUpon>EditManager.xaml</DependentUpon>
+    <Compile Include="View\Dictionary\EditCustomer.xaml.cs">
+      <DependentUpon>EditCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CRUD\Edit\EditNomenclature.xaml.cs">
-      <DependentUpon>EditNomenclature.xaml</DependentUpon>
+    <Compile Include="View\Dictionary\EditWorker.xaml.cs">
+      <DependentUpon>EditWorker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderV.xaml.cs">
+    <Compile Include="View\Document\OrderV.xaml.cs">
       <DependentUpon>OrderV.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Priorities.xaml.cs">
-      <DependentUpon>Priorities.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Problems.xaml.cs">
-      <DependentUpon>Problems.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\CRUD\ItemsList.xaml">
+    <Page Include="View\Dictionary\EditEmployeePost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dictionary\EditDepartment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dictionary\ItemsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\CRUD\Edit\EditCustomer.xaml">
+    <Page Include="View\Dictionary\EditCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\CRUD\Edit\EditDepartment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CRUD\Edit\EditEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CRUD\Edit\EditManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CRUD\Edit\EditNomenclature.xaml">
+    <Page Include="View\Dictionary\EditWorker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -238,15 +213,7 @@
       <DependentUpon>Main.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\OrderV.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Priorities.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Problems.xaml">
+    <Page Include="View\Document\OrderV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -265,18 +232,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201708300357453_InitialCreate.resx">
-      <DependentUpon>201708300357453_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708301057222_Employee.resx">
-      <DependentUpon>201708301057222_Employee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708301112457_Employee1.resx">
-      <DependentUpon>201708301112457_Employee1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708301126059_Employee2.resx">
-      <DependentUpon>201708301126059_Employee2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -295,7 +250,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModel\Document\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

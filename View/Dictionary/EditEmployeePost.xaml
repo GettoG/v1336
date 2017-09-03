@@ -1,0 +1,34 @@
+﻿<Window x:Class="v1336.View.EditEmployeePost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:v1336.View"
+        xmlns:model="clr-namespace:v1336.Model"
+        mc:Ignorable="d"
+        Title="EditCustomer" Height="165" Width="365">
+    <Window.DataContext>
+        <model:Customer/>
+    </Window.DataContext>
+    <Grid>
+        <Border BorderBrush="Black" CornerRadius="5"  Padding="15" BorderThickness="1" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Height="24"><Run Text="Наименование"/></TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="TextBoxLastName" Height="24" Text="{Binding Path=Name, Mode=TwoWay}"   />
+
+                <Button Grid.Row="1"  Grid.Column="0" Width="90"  Name="btn_Save" HorizontalAlignment="Left" Content="Сохранить" Height="24" Click="btn_Save_Click"  />
+                <Button Grid.Row="1"  Grid.Column="1" Width="90"  Name="btn_Exit" HorizontalAlignment="Right" Content="Отмена"  Height="24" Click="btn_Exit_Click" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

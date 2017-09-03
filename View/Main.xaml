@@ -25,16 +25,7 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <Menu x:Name="menu"  Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.025,0.585">
-            <MenuItem Header="Справочники" Width="94" Height="23">
-                <MenuItem Header="Заказчики" HorizontalAlignment="Left" Width="161" Margin="0,0,-21,0" Click="MenuItem_Click_Customers"/>
-                <MenuItem Header="Менеджеры" HorizontalAlignment="Left" Width="170" Margin="0,0,-30,0" Click="MenuItem_Click_Managers"/>
-                <MenuItem Header="Подразделения" HorizontalAlignment="Left" Width="179" Margin="0,0,-39,0" Click="MenuItem_Click_Departments"/>
-                <MenuItem Header="Изделия" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click_Nomenclatures"/>
-                <MenuItem Header="Работники" HorizontalAlignment="Left" Height="22" Width="163" Margin="0,0,-23,0" Click="MenuItem_Click_Employees"/>
-            </MenuItem>
-            <MenuItem Header="Приоритеты" Height="23" Width="100" Click="MenuItem_Click_Priorities"/>
-            <MenuItem Header="Проблемы при производстве" Height="23" Width="175" Click="MenuItem_Click_Problems"/>
-           
+            
         </Menu>
 
         <DataGrid SelectedItem="{Binding SelectedOrder, Mode=TwoWay}" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Orders}" AutoGenerateColumns="False" CanUserAddRows="false"  >
@@ -55,7 +46,7 @@
                 <DataGridTextColumn Header="Дата заявки" Binding="{Binding Path=Date_b, Mode=OneWay}" Width="80*"/>
                 <DataGridTextColumn Header="Дата отгрузки" Binding="{Binding Path=Date_e, Mode=OneWay}" Width="80*"/>
                 <DataGridTextColumn Header="% выполнения" Binding="{Binding Path=Procent, Mode=OneWay}" Width="80*"/>
-                <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status.Name, Mode=OneWay}" Width="120*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Path=OrderRowStatus.Name, Mode=OneWay}" Width="120*"/>
                 <DataGridTextColumn Header="Менеджер" Binding="{Binding Manager.FullName, Mode=OneWay}" Width="120*"  />
                 <DataGridTextColumn Header="Примечание" Binding="{Binding Path=Comment, Mode=OneWay}" Width="150*">
                     <DataGridTextColumn.ElementStyle>

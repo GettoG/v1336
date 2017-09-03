@@ -1,9 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using v1336.Model;
 using v1336.Rep;
-using v1336.View.CRUD;
-using v1336.ViewModel.CRUD;
+using v1336.Rep.Dictionary;
+using v1336.ViewModel;
 
 namespace v1336.View
 {
@@ -15,12 +16,41 @@ namespace v1336.View
         public MainWindow()
         {
             InitializeComponent();
+            CreateMenu();
         }
 
-        private void MenuItem_Click_Customers(object sender, RoutedEventArgs e)
+        private void CreateMenu()
         {
-            //var itemData = new ItemsData("Справочник заказчиков", new CustomerRep(), typeof(EditCustomer));
-            //ShowCatalog(itemData);
+            MenuItem root = new MenuItem{ Header = "Справочники" };
+            root.Items.Add(CreateMenuItem("Заказчики", (obj, arg) =>
+            {
+                var itemData = new ItemsData("Справочник заказчики", new CustomerRep(), typeof(EditCustomer));
+                ShowCatalog(itemData);
+            }));
+            root.Items.Add(CreateMenuItem("Сотрудники", (obj, arg) =>
+            {
+                var itemData = new ItemsData("Справочник сотрудники", new WorkerRep(), typeof(EditWorker));
+                ShowCatalog(itemData);
+            }));
+            root.Items.Add(CreateMenuItem("Подразделения", (obj, arg) =>
+            {
+                var itemData = new ItemsData("Справочник подразделения", new DepartmentRep(), typeof(EditDepartment));
+                ShowCatalog(itemData);
+            }));
+            root.Items.Add(CreateMenuItem("Должности", (obj, arg) =>
+            {
+                var itemData = new ItemsData("Справочник должности", new WorkerPostRep(), typeof(EditEmployeePost));
+                ShowCatalog(itemData);
+            }));
+            menu.Items.Add(root);
+        }
+
+        private MenuItem CreateMenuItem(string header, RoutedEventHandler act)
+        {
+            var item = new MenuItem();
+            item.Header = header;
+            item.Click += act;
+            return item;
         }
 
         private void ShowCatalog(ItemsData data)
@@ -29,53 +59,5 @@ namespace v1336.View
             win.Show();
         }
 
-
-
-        private void MenuItem_Click_Priorities(object sender, RoutedEventArgs e)
-        {
-            Priorities win = new Priorities { Owner = this };
-            win.Show();
-        }
-
-        private void MenuItem_Click_Problems(object sender, RoutedEventArgs e)
-        {
-            Problems win = new Problems { Owner = this };
-            win.Show();
-        }
-
-        private void MenuItem_Click_Authorization(object sender, RoutedEventArgs e)
-        {
-            Authorization win = new Authorization { Owner = this };
-            win.Show();
-        }
-
-
-        #region Dictionary
-
-        private void MenuItem_Click_Managers(object sender, RoutedEventArgs e)
-        {
-            var itemData = new ItemsData("Справочник менеджеров", new ManagerRep(), typeof(CRUD.Edit.EditManager));
-            ShowCatalog(itemData);
-        }
-
-        private void MenuItem_Click_Departments(object sender, RoutedEventArgs e)
-        {
-            var itemData = new ItemsData("Справочник подразделений", new DepartmentRep(), typeof(CRUD.Edit.EditDepartment));
-            ShowCatalog(itemData);
-        }
-
-        private void MenuItem_Click_Nomenclatures(object sender, RoutedEventArgs e)
-        {
-            var itemData = new ItemsData("Справочник изделий", new NomenclatureRep(), typeof(CRUD.Edit.EditNomenclature));
-            ShowCatalog(itemData);
-        }
-
-        private void MenuItem_Click_Employees(object sender, RoutedEventArgs e)
-        {
-            var itemData = new ItemsData("Справочник сотрудников", new EmployeeRep(), typeof(CRUD.Edit.EditEmployee));
-            ShowCatalog(itemData);
-        }
-
-        #endregion
     }
 }

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using GalaSoft.MvvmLight;
 using v1336.Model;
-using v1336.Rep;
+using v1336.Rep.Dictionary;
+using v1336.Rep.Document;
 
 namespace v1336.ViewModel
 {
@@ -13,14 +14,13 @@ namespace v1336.ViewModel
         public List<Customer> Customers { get; set; }
         public Order Order { get; set; }
 
-
-        ManagerRep managerRep = new ManagerRep();
-        public List<Manager> Managers { get; set; }
+        //ManagerRep managerRep = new ManagerRep();
+        //public List<Manager> Managers { get; set; }
 
         public OrderVM(int id)
         {
             Customers = customerRep.GetAll().ToList();
-            Managers = managerRep.GetAll().ToList();
+            //Managers = managerRep.GetAll().ToList();
             if (id != 0)
             {
                 Order = rep.GetById(id);

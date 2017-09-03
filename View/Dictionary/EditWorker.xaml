@@ -1,0 +1,66 @@
+﻿<Window x:Class="v1336.View.EditWorker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:v1336.View"
+        xmlns:model="clr-namespace:v1336.Model"
+        xmlns:model1="clr-namespace:v1336.ViewModel"
+        mc:Ignorable="d"
+        Height="365.107" Width="365" MinWidth="365" MinHeight="285">
+    <Window.DataContext>
+        <model:Worker/>
+    </Window.DataContext>
+    <Grid>
+        <Border BorderBrush="Black" CornerRadius="5"  Padding="15" BorderThickness="1" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBlock Height="24"><Run Text="Фамилия"/></TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="TextBoxLastName" Height="24" Text="{Binding Path=LastName, Mode=TwoWay}"   />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Height="24" ><Run Text="Имя"/></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="TextBoxFirstName" Height="24"  Text="{Binding Path=FirstName, Mode=TwoWay}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Height="24" ><Run Text="Отчество"/></TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="TextBoxFatherName" Height="24" Text="{Binding Path=FatherName, Mode=TwoWay}"   />
+
+                <TextBlock Grid.Row="3"  Grid.Column="0" Height="24"  ><Run Text="Телефон"/></TextBlock>
+                <TextBox Grid.Row="3"  Grid.Column="1" x:Name="TextBoxPhone" Height="24" Text="{Binding Path=Phone, Mode=TwoWay}" />
+
+                <TextBlock Grid.Row="4"  Grid.Column="0" Height="24"  ><Run Text="Подразделение"/></TextBlock>
+                <ComboBox Grid.Row="4"  Grid.Column="1" Height="24"
+                          Name="cmb_Departments"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding Path=DepartmentId, Mode=TwoWay }"
+                          ></ComboBox>
+
+                <TextBlock Grid.Row="5"  Grid.Column="0" Height="24"  ><Run Text="Должность"/></TextBlock>
+                <ComboBox Grid.Row="5"  Grid.Column="1" Height="24"
+                          Name="cmb_Post"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding Path=EmployeePostId, Mode=TwoWay }"
+                ></ComboBox>
+
+                <Button Grid.Row="6"  Grid.Column="0" Width="90"  Name="btn_Save" HorizontalAlignment="Left" Content="Сохранить" Height="24" Click="btn_Save_Click"  />
+                <Button Grid.Row="6"  Grid.Column="1" Width="90"  Name="btn_Exit" HorizontalAlignment="Right" Content="Отмена"  Height="24" Click="btn_Exit_Click" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

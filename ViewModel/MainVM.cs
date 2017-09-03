@@ -5,7 +5,10 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using v1336.Model;
 using v1336.Rep;
+using v1336.Rep.Dictionary;
+using v1336.Rep.Document;
 using v1336.View;
+using OrderV = v1336.View.Document.OrderV;
 
 namespace v1336.ViewModel 
 {
