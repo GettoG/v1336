@@ -33,7 +33,10 @@ namespace v1336.Model
 
         public override string ToString()
         {
-            return $"{LastName} {FirstName} {FatherName} ({Phone})";
+            var res = $"{LastName} {FirstName[0]}.";
+            if (!string.IsNullOrEmpty(FatherName))
+                res += $" {FatherName[0]}.";
+            return res;
         }
     }
 }

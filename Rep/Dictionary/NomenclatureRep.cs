@@ -11,7 +11,9 @@ namespace v1336.Rep.Dictionary
         {
             using (var db = new DBContext())
             {
-                return db.Nomenclatures.ToList();
+                return db.Nomenclatures
+                    .Include("NomenclatureCategory")
+                    .ToList();
             }
         }
 
@@ -19,7 +21,9 @@ namespace v1336.Rep.Dictionary
         {
             using (var db = new DBContext())
             {
-                return db.Nomenclatures.FirstOrDefault(x => x.Id == id);
+                return db.Nomenclatures
+                    .Include("NomenclatureCategory")
+                    .FirstOrDefault(x => x.Id == id);
             }
         }
 

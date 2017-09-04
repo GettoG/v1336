@@ -116,6 +116,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\201709040623045_refactoring.cs" />
+    <Compile Include="Migrations\201709040623045_refactoring.Designer.cs">
+      <DependentUpon>201709040623045_refactoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AbstartDictionaryObject.cs" />
     <Compile Include="Model\Dictionary\Worker.cs" />
     <Compile Include="Model\Dictionary\WorkerPost.cs" />
@@ -247,6 +252,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201709040623045_refactoring.resx">
+      <DependentUpon>201709040623045_refactoring.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
