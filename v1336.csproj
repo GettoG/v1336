@@ -116,7 +116,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AbstartDictionaryObject.cs" />
     <Compile Include="Model\Dictionary\Worker.cs" />
     <Compile Include="Model\Dictionary\WorkerPost.cs" />

@@ -120,22 +120,13 @@
                                 ItemsSource="{Binding Path=Nomenclatures, RelativeSource={RelativeSource AncestorType=UserControl} }"
                                 DisplayMemberPath="Name"
                                 SelectedValuePath="Id"
-<<<<<<< HEAD
-                                SelectedValueBinding="{Binding Path=NomenclatureId, Mode=TwoWay }"
-=======
-                                SelectedValueBinding="{Binding Path=OrderRow.Nomenclature.CategoryId, Mode=TwoWay }"
->>>>>>> 129341fc11c6f9d37dd27e9a4055b8397c4722bf
-                            >
+                                SelectedValueBinding="{Binding Path=OrderRow.Nomenclature.CategoryId, Mode=TwoWay }">
                             </DataGridComboBoxColumn>
                             <DataGridComboBoxColumn Width="200*" Header="Номенклатура" 
                                                     ItemsSource="{Binding Path=Nomenclatures}"
                                                     DisplayMemberPath="Name"
                                                     SelectedValuePath="Id"
-<<<<<<< HEAD
-                                                    SelectedValueBinding="{Binding Path=NomenclatureId, Mode=TwoWay }"/>
-=======
                                                     SelectedValueBinding="{Binding Path=OrderRow.Nomenclature.Id, Mode=TwoWay }"/>
->>>>>>> 129341fc11c6f9d37dd27e9a4055b8397c4722bf
                             <DataGridTextColumn Width="100*" Header="Количество" Binding="{Binding Path=Quantity, Mode=TwoWay}" />
 
                         </DataGrid.Columns>
