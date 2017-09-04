@@ -167,6 +167,12 @@
     <Compile Include="View\Dictionary\EditDepartment.xaml.cs">
       <DependentUpon>EditDepartment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dictionary\EditNomenclature.xaml.cs">
+      <DependentUpon>EditNomenclature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dictionary\EditNomenclatureCategory.xaml.cs">
+      <DependentUpon>EditNomenclatureCategory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dictionary\ItemsList.xaml.cs">
       <DependentUpon>ItemsList.xaml</DependentUpon>
     </Compile>
@@ -190,6 +196,14 @@
     <Page Include="View\Dictionary\EditDepartment.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dictionary\EditNomenclature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dictionary\EditNomenclatureCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dictionary\ItemsList.xaml">
       <SubType>Designer</SubType>
