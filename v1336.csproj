@@ -116,15 +116,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AbstartDictionaryObject.cs" />
     <Compile Include="Model\Dictionary\Worker.cs" />
-    <Compile Include="Model\Dictionary\EmployeePost.cs" />
+    <Compile Include="Model\Dictionary\WorkerPost.cs" />
     <Compile Include="Model\Dictionary\User.cs" />
     <Compile Include="Model\Document\Comment.cs" />
     <Compile Include="Model\Dictionary\CommentTheme.cs" />
     <Compile Include="Model\Dictionary\Customer.cs" />
     <Compile Include="Model\DBContext.cs" />
     <Compile Include="Model\Dictionary\Department.cs" />
+    <Compile Include="Model\Enum\WorkerPosts.cs" />
     <Compile Include="Model\IDbObject.cs" />
     <Compile Include="Model\Document\OrderRowHistory.cs" />
     <Compile Include="Rep\Dictionary\UserRep.cs" />

@@ -10,21 +10,20 @@ namespace v1336.ViewModel
     public class OrderVM : ViewModelBase
     {
         OrderRep rep = new OrderRep();
-        CustomerRep customerRep = new CustomerRep();
-        public List<Customer> Customers { get; set; }
-        public Order Order { get; set; }
 
-        //ManagerRep managerRep = new ManagerRep();
-        //public List<Manager> Managers { get; set; }
+        public List<Customer> Customers { get; set; }
+        public List<Worker> Manager { get; set; }
+        public List<Nomenclature> Nomenclatures { get; set; }
+        public Order Order { get; set; } = new Order();
 
         public OrderVM(int id)
         {
-            Customers = customerRep.GetAll().ToList();
-            //Managers = managerRep.GetAll().ToList();
+            Customers = new CustomerRep().GetAll().ToList();
+            Manager = new WorkerRep().GetAll().Where(x=>x.EmployeePostId == 1).ToList();
+            Nomenclatures = new NomenclatureRep().GetAll().ToList();
             if (id != 0)
             {
                 Order = rep.GetById(id);
-
             }
         }
       

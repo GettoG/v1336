@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace v1336.Model
 {
-    public class EmployeePost : AbstartDictionaryObject
+    public class WorkerPost : AbstartDictionaryObject
     {
     }
 }

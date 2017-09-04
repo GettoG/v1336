@@ -14,7 +14,7 @@
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<EmployeePost> WorkerPosts { get; set; }
+        public DbSet<WorkerPost> WorkerPosts { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Nomenclature> Nomenclatures { get; set; }
         public DbSet<NomenclatureCategory> NomenclatureCategorys { get; set; }

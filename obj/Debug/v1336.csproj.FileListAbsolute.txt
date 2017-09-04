@@ -69,4 +69,3 @@ D:\git_rep\v1336\obj\Debug\View\Dictionary\EditEmployeePost.g.cs
 D:\git_rep\v1336\obj\Debug\View\Dictionary\EditEmployeePost.baml
 D:\git_rep\v1336\obj\Debug\View\Dictionary\EditWorker.g.cs
 D:\git_rep\v1336\obj\Debug\View\Dictionary\EditWorker.baml
-D:\git_rep\v1336\obj\Debug\v1336.csprojResolveAssemblyReference.cache

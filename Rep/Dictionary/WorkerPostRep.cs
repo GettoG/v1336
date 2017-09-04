@@ -5,9 +5,9 @@ using v1336.Model;
 
 namespace v1336.Rep.Dictionary
 {
-    public class WorkerPostRep : AbstractRep<EmployeePost>
+    public class WorkerPostRep : AbstractRep<WorkerPost>
     {
-        public override IEnumerable<EmployeePost> GetAll()
+        public override IEnumerable<WorkerPost> GetAll()
         {
             using (var db = new DBContext())
             {
@@ -15,7 +15,7 @@ namespace v1336.Rep.Dictionary
             }
         }
 
-        public override EmployeePost GetById(int id)
+        public override WorkerPost GetById(int id)
         {
             using (var db = new DBContext())
             {
@@ -23,7 +23,7 @@ namespace v1336.Rep.Dictionary
             }
         }
 
-        public override void Add(EmployeePost obj)
+        public override void Add(WorkerPost obj)
         {
             using (var db = new DBContext())
             {
@@ -34,7 +34,7 @@ namespace v1336.Rep.Dictionary
             }
         }
 
-        public override void Update(EmployeePost obj)
+        public override void Update(WorkerPost obj)
         {
             using (var db = new DBContext())
             {
@@ -45,7 +45,7 @@ namespace v1336.Rep.Dictionary
             }
         }
 
-        public override void Delete(EmployeePost obj)
+        public override void Delete(WorkerPost obj)
         {
             using (var db = new DBContext())
             {

@@ -14,7 +14,7 @@ namespace v1336.View
         public int Id { get; set; }
         private readonly WorkerPostRep rep = new WorkerPostRep();
 
-        public EmployeePost Selected { get; set; }
+        public WorkerPost Selected { get; set; }
         private readonly ItemsListVM ParentWindowVM;
 
         public const string TITLE_NAME = "должность";
@@ -26,7 +26,7 @@ namespace v1336.View
             if (Id == 0)
             {
                 Title = "Добавить " + TITLE_NAME;
-                Selected = new EmployeePost();
+                Selected = new WorkerPost();
             }
             else
             {

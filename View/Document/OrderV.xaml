@@ -58,7 +58,7 @@
                 ItemsSource="{Binding Path=Customers}"
                 DisplayMemberPath="Name"
                 SelectedValuePath="Id"
-                SelectedValue="{ Binding Path=Order.Customer.Id, Mode=TwoWay }"
+                SelectedValue="{ Binding Path=Order.CustomerId, Mode=TwoWay }"
                 Height="25"
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 Width="150"
@@ -70,7 +70,7 @@
                 ItemsSource="{Binding Path=Managers}"
                 DisplayMemberPath="FullName"
                 SelectedValuePath="Id"
-                SelectedValue="{Binding Path=Order.Manager.Id, Mode=TwoWay }"
+                SelectedValue="{Binding Path=Order.ManagerId, Mode=TwoWay }"
                 Height="25"
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 Width="150"
@@ -94,8 +94,6 @@
                 <TextBox  Height="100" Text="{Binding Path=Order.Comment, Mode=TwoWay}" TextWrapping="Wrap"></TextBox>
             </StackPanel>
 
-
-
             <Border BorderBrush="Black" CornerRadius="5" Margin="20" BorderThickness="1" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="3"  Grid.Row="3">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -118,17 +116,17 @@
                         <DataGrid.Columns>
                             <DataGridComboBoxColumn
                                 Width="200*" Header="Категория"
-                                ItemsSource="{Binding Path=NomenclatureCategory}"
+                                ItemsSource="{Binding Path=Nomenclatures, RelativeSource={RelativeSource AncestorType=UserControl} }"
                                 DisplayMemberPath="Name"
                                 SelectedValuePath="Id"
-                                SelectedValueBinding="{Binding Path=Order.NomenclatureCategory.Id, Mode=TwoWay }"
+                                SelectedValueBinding="{Binding Path=NomenclatureId, Mode=TwoWay }"
                             >
                             </DataGridComboBoxColumn>
                             <DataGridComboBoxColumn Width="200*" Header="Номенклатура" 
-                                                    ItemsSource="{Binding Path=Nomenclature}"
+                                                    ItemsSource="{Binding Path=Nomenclatures}"
                                                     DisplayMemberPath="Name"
                                                     SelectedValuePath="Id"
-                                                    SelectedValueBinding="{Binding Path=Order.Nomenclature.Id, Mode=TwoWay }"/>
+                                                    SelectedValueBinding="{Binding Path=NomenclatureId, Mode=TwoWay }"/>
                             <DataGridTextColumn Width="100*" Header="Количество" Binding="{Binding Path=Quantity, Mode=TwoWay}" />
 
                         </DataGrid.Columns>

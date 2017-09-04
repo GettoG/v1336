@@ -25,7 +25,7 @@ namespace v1336.Model
         public string Phone { get; set; }
         [Required]
         public int EmployeePostId { get; set; }
-        public EmployeePost EmployeePost { get; set; }
+        public WorkerPost EmployeePost { get; set; }
 
         [Required]
         public int DepartmentId { get; set; }
