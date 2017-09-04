@@ -1,6 +1,7 @@
 #ignore output directory
 bin
 obj
+.vs
 
 #ignore files
 *.config

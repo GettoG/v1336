@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace v1336.Model
 {
-    public class OrderRow : IDbObject
+    public class OrderRow : IDbObject, ICloneable
     {
         public int Id { get; set; }
         [Required]
@@ -30,6 +31,18 @@ namespace v1336.Model
                 }
                 return res;
             }
+        }
+
+        public object Clone()
+        {
+            var res = new OrderRow();
+            res.Id = Id;
+            res.OrderId = OrderId;
+            res.Order = Order;
+            res.Nomenclature = Nomenclature;
+            res.NomenclatureId = NomenclatureId;
+            res.Quantity = Quantity;
+            return res;
         }
     }
 }

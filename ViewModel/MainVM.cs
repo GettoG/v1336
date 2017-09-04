@@ -42,6 +42,8 @@ namespace v1336.ViewModel
 
         public RelayCommand UpdateOrder => new RelayCommand(() =>
         {
+            if(SelectedOrder == null || SelectedOrder.Id == 0) return;
+            
             OrderV win = new OrderV(SelectedOrder.Id);
             win.Show();
             RaisePropertyChanged("Orders");
