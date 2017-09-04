@@ -1,0 +1,43 @@
+﻿<Window x:Class="v1336.View.Dictionary.EditNomenclature"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:v1336.View.Dictionary"
+        xmlns:model="clr-namespace:v1336.Model"
+        mc:Ignorable="d"
+        Title="EditNomenclature" Height="208.5" Width="300">
+    <Window.DataContext>
+        <model:Nomenclature/>
+    </Window.DataContext>
+    <Grid>
+        <Border BorderBrush="Black" CornerRadius="5"  Padding="15" BorderThickness="1" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Column="1" Grid.Row="0" Height="24"
+                          Name="cmb_NomenclatureCategory"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding Path=NomenclatureCategoryId, Mode=TwoWay }" Margin="10,8,0,9"
+                ></ComboBox>
+                <TextBlock Height="24" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,8,135,9"><Run Text="Категория изделия"/></TextBlock>
+                
+                <TextBlock Height="24" Grid.Column="0" Grid.Row="1"><Run Text="Наименование"/></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="TextBoxLastName" Height="24" Text="{Binding Path=Name, Mode=TwoWay}"   />
+
+                <Button Grid.Row="2"  Grid.Column="0" Width="90"  Name="btn_Save" HorizontalAlignment="Left" Content="Сохранить" Height="24" Click="btn_Save_Click"  />
+                <Button Grid.Row="2"  Grid.Column="1" Width="90"  Name="btn_Exit" HorizontalAlignment="Right" Content="Отмена"  Height="24" Click="btn_Exit_Click" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
+

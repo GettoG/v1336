@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\git_rep\v1336\obj\Debug\
+C:\Users\getto_g\Desktop\work\v1336\obj\Debug\
 v1336
 none
 false
 DEBUG;TRACE
-D:\git_rep\v1336\App.xaml
-8-35983337
+C:\Users\getto_g\Desktop\work\v1336\App.xaml
+10-354078338
 
-521275376162
-88369747636
-View\Authorization.xaml;View\Dictionary\EditEmployeePost.xaml;View\Dictionary\EditDepartment.xaml;View\Dictionary\ItemsList.xaml;View\Dictionary\EditCustomer.xaml;View\Dictionary\EditWorker.xaml;View\Main.xaml;View\Document\OrderV.xaml;
+54-1065018108
+88-1872533190
+View\Authorization.xaml;View\Dictionary\EditEmployeePost.xaml;View\Dictionary\EditDepartment.xaml;View\Dictionary\EditNomenclature.xaml;View\Dictionary\EditNomenclatureCategory.xaml;View\Dictionary\ItemsList.xaml;View\Dictionary\EditCustomer.xaml;View\Dictionary\EditWorker.xaml;View\Main.xaml;View\Document\OrderV.xaml;
 
 False
 

@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using v1336.Model;
 using v1336.Rep;
 using v1336.Rep.Dictionary;
+using v1336.View.Dictionary;
 using v1336.ViewModel;
 
 namespace v1336.View
@@ -40,6 +41,16 @@ namespace v1336.View
             root.Items.Add(CreateMenuItem("Должности", (obj, arg) =>
             {
                 var itemData = new ItemsData("Справочник должности", new WorkerPostRep(), typeof(EditEmployeePost));
+                ShowCatalog(itemData);
+            }));
+            root.Items.Add(CreateMenuItem("Категории изделий", (obj, arg) =>
+            {
+                var itemData = new ItemsData("Справочник категорий", new NomenclatureCategoryRep(), typeof(EditNomenclatureCategory));
+                ShowCatalog(itemData);
+            }));
+            root.Items.Add(CreateMenuItem("Изделия", (obj, arg) =>
+            {
+                var itemData = new ItemsData("Справочник изделий", new NomenclatureRep(), typeof(EditNomenclature));
                 ShowCatalog(itemData);
             }));
             menu.Items.Add(root);
