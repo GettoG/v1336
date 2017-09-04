@@ -1,3 +1,6 @@
+#ignore output directory
 bin
 obj
-App.config
+
+#ignore files
+*.config
